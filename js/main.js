@@ -100,12 +100,19 @@
     if (!wasOpen) item.classList.add('open');
   }
 
+  // ─── FORMSPREE ENDPOINT ───
+  // 1. Go to https://formspree.io and sign up (free)
+  // 2. Click "New Form", name it "Kreative Contact", set email to bkngalame@gmail.com
+  // 3. Copy your form ID (looks like "xpwzjwkd") and paste it below
+  const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
+
   // ─── FORM SUBMISSIONS ───
   function submitQuote(e) {
     e.preventDefault();
     showToast('✓ Quote request submitted! We\'ll be in touch within 24 hours.');
     e.target.reset();
-    document.getElementById('filePreview').innerHTML = '';
+    const fp = document.getElementById('filePreview');
+    if (fp) fp.innerHTML = '';
   }
   function submitOrder(e) {
     e.preventDefault();
@@ -113,8 +120,36 @@
   }
   function submitContact(e) {
     e.preventDefault();
-    showToast('✓ Message sent! We\'ll respond within one business day.');
-    e.target.reset();
+    const form = e.target;
+    const btn = document.getElementById('contactSubmitBtn');
+    const original = btn.innerHTML;
+    btn.innerHTML = 'Sending…';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (res.ok) {
+        showToast('✓ Message sent! We\'ll respond within one business day.');
+        form.reset();
+      } else {
+        return res.json().then(function(data) {
+          var msg = data.errors ? data.errors.map(function(err){ return err.message; }).join(', ') : 'Submission failed';
+          throw new Error(msg);
+        });
+      }
+    })
+    .catch(function(err) {
+      showToast('⚠ Could not send. Please call (404) 683-4961 or email bkngalame@gmail.com');
+      console.error('Contact form error:', err);
+    })
+    .finally(function() {
+      btn.innerHTML = original;
+      btn.disabled = false;
+    });
   }
   function subscribeEmail(e) {
     e.preventDefault();
