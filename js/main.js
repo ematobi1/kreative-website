@@ -104,7 +104,7 @@
   // 1. Go to https://formspree.io and sign up (free)
   // 2. Click "New Form", name it "Kreative Contact", set email to bkngalame@gmail.com
   // 3. Copy your form ID (looks like "xpwzjwkd") and paste it below
-  const FORMSPREE_ID = 'YOUR_FORM_ID'; // ← replace this
+  const FORMSPREE_ID = 'xkoplddy';
 
   // ─── FORM SUBMISSIONS ───
   function submitQuote(e) {
