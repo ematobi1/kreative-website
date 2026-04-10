@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1A1814">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>About Us — Kreative Additions LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── DEEP PLUM / GOLD THEME ── */
+  :root { --plum:#3C1A5C; --plum-dark:#1A0A2E; --plum-mid:#52268A; --plum-light:#F3EFF8; }
+
+  .ph { background:linear-gradient(135deg,var(--plum-dark) 0%,var(--plum) 60%,var(--plum-mid) 100%); padding:130px 8vw 110px; position:relative; overflow:hidden; }
+  .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='50' rx='40' ry='40' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
+  .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; text-align:center; }
+  .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:24px; display:flex; align-items:center; justify-content:center; gap:16px; }
+  .ph-eyebrow::before,.ph-eyebrow::after { content:''; display:block; width:40px; height:1px; background:var(--gold); }
+  .ph-title { font-family:var(--font-display); font-size:clamp(48px,6vw,80px); font-weight:300; color:#F5EFE0; line-height:1.05; margin-bottom:24px; }
+  .ph-title em { font-style:italic; color:var(--gold); }
+  .ph-sub { font-size:16px; font-weight:300; color:rgba(243,239,248,.65); max-width:580px; margin:0 auto 48px; line-height:1.9; }
+  .btn-plum { display:inline-flex; align-items:center; gap:8px; background:var(--gold); color:var(--charcoal); font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:15px 32px; border:none; cursor:pointer; transition:all .25s; text-decoration:none; }
+  .btn-plum:hover { background:var(--gold-light); }
+
+  .story-section { padding:100px 8vw; background:#fff; }
+  .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .story-text .section-label { margin-bottom:20px; }
+  .story-title { font-family:var(--font-display); font-size:clamp(34px,4vw,54px); font-weight:300; color:var(--plum-dark); line-height:1.2; margin-bottom:28px; }
+  .story-title em { font-style:italic; color:var(--plum); }
+  .story-body p { font-size:15px; font-weight:300; color:var(--warm-gray); line-height:1.9; margin-bottom:20px; }
+  .story-body p:last-child { margin-bottom:36px; }
+  .story-signature { font-family:var(--font-display); font-size:28px; font-weight:400; font-style:italic; color:var(--plum); margin-bottom:4px; }
+  .story-signature-role { font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--warm-gray-light); }
+  .story-img { background:var(--plum-dark); min-height:520px; display:flex; align-items:flex-end; justify-content:flex-start; padding:32px; position:relative; overflow:hidden; }
+  .story-img::before { content:'Founder Photo'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(201,168,76,.3); }
+  .story-img-badge { background:var(--gold); color:var(--charcoal); padding:12px 24px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; position:relative; z-index:1; }
+
+  .values-section { padding:100px 8vw; background:var(--plum-light); }
+  .values-section .section-title em { color:var(--plum); }
+  .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:64px; }
+  .value-card { background:#fff; padding:52px 40px; border-top:4px solid transparent; transition:border-color .3s; }
+  .value-card:hover { border-top-color:var(--plum); }
+  .value-icon { font-size:40px; margin-bottom:24px; }
+  .value-title { font-family:var(--font-display); font-size:26px; font-weight:400; color:var(--plum-dark); margin-bottom:14px; }
+  .value-desc { font-size:14px; font-weight:300; color:var(--warm-gray); line-height:1.85; }
+
+  .stats-plum { display:grid; grid-template-columns:repeat(4,1fr); background:var(--plum-dark); }
+  .stat-b { padding:52px 24px; text-align:center; border-right:1px solid rgba(201,168,76,.1); }
+  .stat-b:last-child { border-right:none; }
+  .stat-b-num { font-family:var(--font-display); font-size:56px; font-weight:300; color:var(--gold); line-height:1; }
+  .stat-b-label { font-size:10px; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:rgba(243,239,248,.5); margin-top:8px; }
+
+  .timeline-section { padding:100px 8vw; background:#fff; }
+  .timeline-section .section-title em { color:var(--plum); }
+  .timeline { margin-top:64px; position:relative; }
+  .timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:1px; background:rgba(60,26,92,.15); }
+  .tl-item { display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center; margin-bottom:48px; }
+  .tl-item:nth-child(odd) .tl-content { grid-column:1; text-align:right; padding-right:40px; }
+  .tl-item:nth-child(odd) .tl-spacer { grid-column:2; }
+  .tl-item:nth-child(odd) .tl-empty { grid-column:3; }
+  .tl-item:nth-child(even) .tl-empty { grid-column:1; }
+  .tl-item:nth-child(even) .tl-spacer { grid-column:2; }
+  .tl-item:nth-child(even) .tl-content { grid-column:3; text-align:left; padding-left:40px; }
+  .tl-dot { width:16px; height:16px; background:var(--plum); border-radius:50%; margin:0 auto; position:relative; z-index:1; }
+  .tl-year { font-family:var(--font-display); font-size:13px; letter-spacing:.15em; color:var(--plum); font-weight:500; margin-bottom:6px; }
+  .tl-event { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--plum-dark); margin-bottom:8px; }
+  .tl-desc { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.75; }
+
+  .team-section { padding:100px 8vw; background:var(--plum-light); }
+  .team-section .section-title em { color:var(--plum); }
+  .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:64px; }
+  .team-card { text-align:center; }
+  .team-avatar { background:var(--plum); width:100%; aspect-ratio:1; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,168,76,.4); }
+  .team-name { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--plum-dark); margin-bottom:4px; }
+  .team-role { font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--plum); }
+  .team-bio { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.7; margin-top:12px; }
+
+  .about-cta { background:var(--plum); padding:80px 8vw; text-align:center; }
+  .about-cta h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); font-weight:300; color:#F5EFE0; margin-bottom:16px; }
+  .about-cta h2 em { font-style:italic; color:var(--gold); }
+  .about-cta p { font-size:15px; font-weight:300; color:rgba(243,239,248,.65); max-width:480px; margin:0 auto 40px; line-height:1.8; }
+
+  @media(max-width:1024px) {
+    .team-grid { grid-template-columns:1fr 1fr; }
+    .values-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:900px) {
+    .story-grid,.values-grid,.team-grid { grid-template-columns:1fr; }
+    .stats-plum { grid-template-columns:repeat(2,1fr); }
+    .stat-b { border-right:none; border-bottom:1px solid rgba(201,168,76,.1); }
+    .timeline::before { display:none; }
+    .tl-item { grid-template-columns:1fr; }
+    .tl-item:nth-child(odd) .tl-content,.tl-item:nth-child(even) .tl-content { grid-column:1; text-align:left; padding:0; }
+    .tl-spacer,.tl-empty { display:none; }
+    .ph { padding:80px 5vw 60px; }
+    .story-section,.values-section,.timeline-section,.team-section { padding:60px 5vw; }
+    .ph-inner { text-align:center; }
+    .ph-sub { margin:0 auto 40px; }
+  }
+  @media(max-width:480px) {
+    .ph-title { font-size:38px; }
+    .story-title { font-size:26px; }
+    .story-img { min-height:280px; }
+    .stat-b-num { font-size:40px; }
+    .value-card { padding:36px 24px; }
+    .team-grid { grid-template-columns:1fr 1fr; }
+    .tl-event { font-size:18px; }
+    .about-cta h2 { font-size:26px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
+<div class="toast" id="toast"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="topbar">Free shipping on orders over $150 &nbsp;·&nbsp; Turnaround: 7–14 days &nbsp;·&nbsp; <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a></div>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="logo">Kreative<span>.</span><sub>Additions LLC</sub></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li></ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="closeMobile()">Home</a><a href="services.html" onclick="closeMobile()">Services</a><a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="shop.html" onclick="closeMobile()">Shop</a><a href="about.html" onclick="closeMobile()">About</a><a href="process.html" onclick="closeMobile()">Process</a><a href="blog.html" onclick="closeMobile()">Blog</a><a href="contact.html" onclick="closeMobile()">Contact</a></div>
+
+<!-- HERO -->
+<div class="ph">
+  <div class="ph-inner fade-in">
+    <div class="ph-eyebrow">Our Story</div>
+    <h1 class="ph-title">The Kreative<br><em>Story</em></h1>
+    <p class="ph-sub">Founded on a passion for transforming fabric into art — Kreative Additions LLC has spent over seven years turning visions into reality for clients across America.</p>
+    <a href="contact.html" class="btn-plum">Work With Us →</a>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="story-grid fade-in">
+    <div class="story-text">
+      <div class="section-label">Who We Are</div>
+      <h2 class="story-title">Born From a <em>Love</em> of Fabric</h2>
+      <div class="story-body">
+        <p>Kreative Additions LLC was founded in Loganville, Georgia with one simple belief: that custom-printed fabric should be accessible, beautiful, and built to last. What started as a small passion project quickly grew into a full-service print studio serving clients across all 50 states.</p>
+        <p>Today, our team combines cutting-edge printing technology with traditional craftsmanship principles to deliver results that consistently exceed expectations. Every order receives the same personal attention — whether it's one custom hoodie or 500 branded uniforms.</p>
+        <p>We're proud of the relationships we've built with clients over the years. Many return season after season, and we consider that the truest measure of our quality.</p>
+      </div>
+      <div class="story-signature">The Kreative Team</div>
+      <div class="story-signature-role">Kreative Additions LLC · Founded 2018</div>
+    </div>
+    <div class="story-img">
+      <div class="story-img-badge">Est. 2018 · Loganville, GA</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="section-label">What We Stand For</div>
+  <h2 class="section-title">Our Core <em>Values</em></h2>
+  <div class="values-grid fade-in">
+    <div class="value-card"><div class="value-icon">🎨</div><div class="value-title">Artistry First</div><p class="value-desc">We treat every print as a piece of art. Quality is never compromised, no matter the order size or timeline.</p></div>
+    <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">Client Partnership</div><p class="value-desc">We listen deeply to understand your vision, then apply our expertise to make it reality — together, every step.</p></div>
+    <div class="value-card"><div class="value-icon">🌿</div><div class="value-title">Responsible Craft</div><p class="value-desc">We source quality materials responsibly and strive to minimize waste in our production process year over year.</p></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-plum fade-in">
+  <div class="stat-b"><div class="stat-b-num">7+</div><div class="stat-b-label">Years in Business</div></div>
+  <div class="stat-b"><div class="stat-b-num">500+</div><div class="stat-b-label">Projects Completed</div></div>
+  <div class="stat-b"><div class="stat-b-num">98%</div><div class="stat-b-label">Client Satisfaction</div></div>
+  <div class="stat-b"><div class="stat-b-num">50</div><div class="stat-b-label">States Served</div></div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="section-label">Our Journey</div>
+  <h2 class="section-title">A <em>Timeline</em> of Growth</h2>
+  <div class="timeline fade-in">
+    <div class="tl-item">
+      <div class="tl-content"><div class="tl-year">2018</div><div class="tl-event">Founded in Loganville</div><p class="tl-desc">Kreative Additions LLC is established in Loganville, GA with a mission to make premium fabric printing accessible to everyone.</p></div>
+      <div class="tl-spacer"><div class="tl-dot"></div></div>
+      <div class="tl-empty"></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-empty"></div>
+      <div class="tl-spacer"><div class="tl-dot"></div></div>
+      <div class="tl-content"><div class="tl-year">2019</div><div class="tl-event">First 100 Clients</div><p class="tl-desc">Reached 100 satisfied clients through word-of-mouth referrals. Expanded our equipment to include all-over print capability.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content"><div class="tl-year">2021</div><div class="tl-event">Nationwide Shipping Launch</div><p class="tl-desc">Expanded shipping to all 50 US states, opening the door to clients across the country seeking premium custom prints.</p></div>
+      <div class="tl-spacer"><div class="tl-dot"></div></div>
+      <div class="tl-empty"></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-empty"></div>
+      <div class="tl-spacer"><div class="tl-dot"></div></div>
+      <div class="tl-content"><div class="tl-year">2023</div><div class="tl-event">Enterprise Program Launch</div><p class="tl-desc">Introduced our Enterprise program for bulk corporate clients, offering wholesale pricing, dedicated account management, and rush fulfillment.</p></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-content"><div class="tl-year">2025</div><div class="tl-event">500+ Projects & Growing</div><p class="tl-desc">Crossed 500 completed projects with a 98% satisfaction rate. Continuing to expand our product range and service capabilities.</p></div>
+      <div class="tl-spacer"><div class="tl-dot"></div></div>
+      <div class="tl-empty"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="section-label">The People</div>
+  <h2 class="section-title">Meet the <em>Team</em></h2>
+  <div class="team-grid fade-in">
+    <div class="team-card"><div class="team-avatar">Upload photo</div><div class="team-name">Founder & Creative Director</div><div class="team-role">Leadership</div><p class="team-bio">Visionary behind Kreative Additions. Passionate about craft and client relationships.</p></div>
+    <div class="team-card"><div class="team-avatar">Upload photo</div><div class="team-name">Head of Production</div><div class="team-role">Operations</div><p class="team-bio">Ensures every print meets our strict quality standards before it leaves the studio.</p></div>
+    <div class="team-card"><div class="team-avatar">Upload photo</div><div class="team-name">Senior Designer</div><div class="team-role">Design</div><p class="team-bio">Transforms client briefs into stunning digital proofs. Expert in color accuracy and print prep.</p></div>
+    <div class="team-card"><div class="team-avatar">Upload photo</div><div class="team-name">Client Relations</div><div class="team-role">Customer Success</div><p class="team-bio">Your point of contact from first quote to final delivery. Always here to help.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <h2>Start Creating <em>With Us</em></h2>
+  <p>Join hundreds of satisfied clients who trust Kreative Additions for their most important custom fabric projects.</p>
+  <a href="contact.html" class="btn-plum">Get in Touch →</a>
+</section>
+
+<footer>
+  <div class="footer-main"><div class="footer-brand"><div class="logo" style="color:var(--cream)">Kreative<span style="color:var(--gold)">.</span><sub style="color:var(--warm-gray-light)">Additions LLC</sub></div><p>Premium custom fabric printing for apparel, home décor, gifts, and branded merchandise.</p><div class="footer-socials"><a class="social-link" href="#">IG</a><a class="social-link" href="#">FB</a><a class="social-link" href="#">PT</a><a class="social-link" href="#">TK</a></div></div><div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Custom Apparel</a></li><li><a href="services.html">Home Décor</a></li><li><a href="services.html">Photo Printing</a></li><li><a href="services.html">Branded Merch</a></li><li><a href="services.html">Event Wear</a></li><li><a href="services.html">Gift Items</a></li></ul></div><div class="footer-col"><h4>Get in Touch</h4><ul><li>📍 344 Macroom Ct, Loganville, GA 30052</li><li><a href="tel:+14046834961">📞 (404) 683-4961</a></li><li><a href="mailto:bkngalame@gmail.com">✉ bkngalame@gmail.com</a></li><li>⏰ Mon–Fri, 9am–6pm EST</li></ul></div></div>
+  <div class="footer-bottom"><p>© 2025 Kreative Additions LLC. All rights reserved. · 344 Macroom Ct, Loganville, GA 30052 · <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a> · <a href="mailto:bkngalame@gmail.com" style="color:inherit">bkngalame@gmail.com</a></p><p>Designed with care · Printed with precision</p></div>
+</footer>
+<div class="chatbot-toggle" id="chatToggle" onclick="toggleChat()" title="Chat with us"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/></svg><div class="chatbot-badge">1</div></div>
+<div class="chatbot-window" id="chatWindow"><div class="chat-header"><div class="chat-avatar">KA</div><div class="chat-header-info"><h4>Kreative Additions</h4><p>● Online now</p></div><button class="chat-close" onclick="toggleChat()">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg bot"><div class="chat-bubble">👋 Thanks for learning about us! Want to know more about our team, process, or start a project? I'm here to help.</div><div class="chat-time">Now</div></div></div><div class="chat-quick-btns"><button class="quick-btn" onclick="sendQuick('Tell me about the company')">About Us</button><button class="quick-btn" onclick="sendQuick('Get a custom quote')">Get a Quote</button><button class="quick-btn" onclick="sendQuick('What are your business hours?')">Hours</button><button class="quick-btn" onclick="sendQuick('Where are you located?')">Location</button></div><div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>
