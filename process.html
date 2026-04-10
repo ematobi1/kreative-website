@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1A1814">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Our Process — Kreative Additions LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── MIDNIGHT BLUE / SILVER THEME ── */
+  :root { --mid:#0D1F35; --mid-dark:#050F1A; --mid-light:#1A3A5C; --silver:#B8C4CF; --silver-light:#E8EDF2; }
+
+  .ph { background:linear-gradient(135deg,var(--mid-dark) 0%,var(--mid) 60%,var(--mid-light) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
+  .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='30' x2='60' y2='30' stroke='rgba(184,196,207,0.05)' stroke-width='1'/%3E%3Cline x1='30' y1='0' x2='30' y2='60' stroke='rgba(184,196,207,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
+  .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--silver); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+  .ph-eyebrow::before { content:''; display:block; width:32px; height:1px; background:var(--silver); }
+  .ph-title { font-family:var(--font-display); font-size:clamp(44px,5.5vw,74px); font-weight:300; color:#F5EFE0; line-height:1.08; margin-bottom:24px; }
+  .ph-title em { font-style:italic; color:var(--silver); }
+  .ph-sub { font-size:15px; font-weight:300; color:rgba(232,237,242,.7); max-width:440px; line-height:1.85; margin-bottom:44px; }
+  .btn-mid { display:inline-flex; align-items:center; gap:8px; background:var(--silver); color:var(--mid-dark); font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:15px 32px; border:none; cursor:pointer; transition:all .25s; text-decoration:none; }
+  .btn-mid:hover { background:#D0D8DF; }
+  .btn-mid-outline { display:inline-flex; align-items:center; background:transparent; color:#F5EFE0; font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:.16em; text-transform:uppercase; padding:14px 32px; border:1px solid rgba(184,196,207,.3); cursor:pointer; transition:all .25s; text-decoration:none; }
+  .btn-mid-outline:hover { border-color:var(--silver); color:var(--silver); }
+  .ph-timeline-preview { display:flex; flex-direction:column; gap:0; }
+  .ph-step { display:flex; align-items:flex-start; gap:20px; padding:18px 0; border-bottom:1px solid rgba(184,196,207,.1); }
+  .ph-step:last-child { border-bottom:none; }
+  .ph-step-num { font-family:var(--font-display); font-size:28px; font-weight:300; color:rgba(184,196,207,.3); line-height:1; flex-shrink:0; width:36px; }
+  .ph-step-text h4 { font-size:13px; font-weight:400; color:var(--silver); letter-spacing:.08em; margin-bottom:2px; }
+  .ph-step-text p { font-size:12px; font-weight:300; color:rgba(232,237,242,.45); }
+
+  .process-section { padding:100px 8vw; background:var(--silver-light); }
+  .process-section .section-title em { color:var(--mid); }
+  .process-big-steps { display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-top:64px; }
+  .big-step { background:#fff; padding:60px 48px; position:relative; overflow:hidden; transition:box-shadow .3s; }
+  .big-step:hover { box-shadow:0 12px 40px rgba(13,31,53,.12); }
+  .big-step::after { content:''; position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg,var(--mid),var(--mid-light)); transform:scaleX(0); transition:transform .4s; transform-origin:left; }
+  .big-step:hover::after { transform:scaleX(1); }
+  .big-step-num { font-family:var(--font-display); font-size:80px; font-weight:300; color:rgba(13,31,53,.07); line-height:1; position:absolute; top:20px; right:28px; }
+  .big-step-icon { font-size:36px; margin-bottom:24px; }
+  .big-step-title { font-family:var(--font-display); font-size:28px; font-weight:400; color:var(--mid-dark); margin-bottom:14px; }
+  .big-step-desc { font-size:14px; font-weight:300; color:var(--warm-gray); line-height:1.85; margin-bottom:24px; }
+  .big-step-detail { list-style:none; }
+  .big-step-detail li { font-size:13px; font-weight:300; color:var(--warm-gray); padding:6px 0; border-bottom:1px solid rgba(13,31,53,.06); display:flex; align-items:center; gap:10px; }
+  .big-step-detail li::before { content:'→'; color:var(--mid); font-size:11px; }
+
+  .files-section { padding:100px 8vw; background:var(--mid-dark); }
+  .files-section .section-label { color:var(--silver); }
+  .files-section .section-label::before { background:var(--silver); }
+  .files-section .section-title { color:#F5EFE0; }
+  .files-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:64px; }
+  .files-col h3 { font-family:var(--font-display); font-size:22px; font-weight:300; color:var(--silver); margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid rgba(184,196,207,.15); }
+  .files-list { list-style:none; }
+  .files-list li { font-size:14px; font-weight:300; color:rgba(232,237,242,.75); padding:10px 0; border-bottom:1px solid rgba(184,196,207,.07); display:flex; align-items:center; gap:12px; }
+  .files-list li::before { content:''; width:8px; height:8px; background:var(--silver); flex-shrink:0; opacity:.5; }
+
+  .turnaround-section { padding:80px 8vw; background:var(--silver-light); }
+  .turnaround-section .section-title em { color:var(--mid); }
+  .turnaround-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:48px; }
+  .ta-card { background:#fff; padding:48px 36px; text-align:center; border-bottom:3px solid var(--mid); }
+  .ta-time { font-family:var(--font-display); font-size:48px; font-weight:300; color:var(--mid); line-height:1; margin-bottom:8px; }
+  .ta-label { font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--silver); margin-bottom:16px; }
+  .ta-desc { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.75; }
+  .ta-price { font-size:12px; font-weight:500; color:var(--mid); margin-top:16px; letter-spacing:.08em; }
+
+  .faq-section { padding:100px 8vw; background:var(--mid); }
+  .faq-section .section-label { color:var(--silver); }
+  .faq-section .section-label::before { background:var(--silver); }
+  .faq-section .section-title { color:#F5EFE0; }
+  .faq-list-p { margin-top:56px; max-width:800px; margin-left:auto; margin-right:auto; }
+  .faq-item-p { border-bottom:1px solid rgba(184,196,207,.12); }
+  .faq-q-p { width:100%; background:none; border:none; padding:22px 0; text-align:left; font-family:var(--font-body); font-size:14px; font-weight:300; color:#F5EFE0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; letter-spacing:.02em; }
+  .faq-q-p:hover { color:var(--silver); }
+  .faq-icon-p { color:var(--silver); font-size:18px; transition:transform .25s; }
+  .faq-item-p.open .faq-icon-p { transform:rotate(45deg); }
+  .faq-a-p { display:none; padding:0 0 20px; font-size:14px; font-weight:300; color:rgba(232,237,242,.6); line-height:1.85; }
+  .faq-item-p.open .faq-a-p { display:block; }
+
+  .process-cta { background:var(--silver); padding:80px 8vw; text-align:center; }
+  .process-cta h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); font-weight:300; color:var(--mid-dark); margin-bottom:16px; }
+  .process-cta h2 em { font-style:italic; color:var(--mid); }
+  .process-cta p { font-size:15px; font-weight:300; color:rgba(13,31,53,.65); max-width:500px; margin:0 auto 40px; line-height:1.8; }
+
+  @media(max-width:1024px) {
+    .turnaround-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:900px) {
+    .ph-inner,.process-big-steps,.files-grid,.turnaround-grid { grid-template-columns:1fr; }
+    .ph { padding:80px 5vw 60px; }
+    .process-section,.files-section,.turnaround-section,.faq-section { padding:60px 5vw; }
+    .ph-actions { flex-direction:column; align-items:flex-start; }
+    .btn-mid, .btn-mid-outline { width:100%; justify-content:center; }
+    .ph-timeline-preview { display:none; }
+  }
+  @media(max-width:480px) {
+    .ph-title { font-size:36px; }
+    .big-step { padding:36px 28px; }
+    .big-step-num { font-size:56px; }
+    .ta-time { font-size:36px; }
+    .faq-q-p { font-size:13px; }
+    .process-cta h2 { font-size:26px; }
+    .process-cta { padding:60px 5vw; }
+  }
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
+<div class="toast" id="toast"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="topbar">Free shipping on orders over $150 &nbsp;·&nbsp; Turnaround: 7–14 days &nbsp;·&nbsp; <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a></div>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="logo">Kreative<span>.</span><sub>Additions LLC</sub></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li></ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="closeMobile()">Home</a><a href="services.html" onclick="closeMobile()">Services</a><a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="shop.html" onclick="closeMobile()">Shop</a><a href="about.html" onclick="closeMobile()">About</a><a href="process.html" onclick="closeMobile()">Process</a><a href="blog.html" onclick="closeMobile()">Blog</a><a href="contact.html" onclick="closeMobile()">Contact</a></div>
+
+<!-- HERO -->
+<div class="ph">
+  <div class="ph-inner">
+    <div>
+      <div class="ph-eyebrow">How It Works</div>
+      <h1 class="ph-title">From Concept<br>to <em>Creation</em></h1>
+      <p class="ph-sub">Our streamlined four-step process ensures your vision comes to life exactly as you imagined — on time, on budget, and without surprises.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-mid">Start Your Order →</a>
+        <a href="services.html" class="btn-mid-outline">View Services</a>
+      </div>
+    </div>
+    <div class="ph-timeline-preview fade-in">
+      <div class="ph-step"><div class="ph-step-num">01</div><div class="ph-step-text"><h4>Submit Your Design</h4><p>Share files, ideas, or a rough brief</p></div></div>
+      <div class="ph-step"><div class="ph-step-num">02</div><div class="ph-step-text"><h4>Proof & Approval</h4><p>Digital proof within 48 hours</p></div></div>
+      <div class="ph-step"><div class="ph-step-num">03</div><div class="ph-step-text"><h4>Print & Production</h4><p>Quality-checked at every stage</p></div></div>
+      <div class="ph-step"><div class="ph-step-num">04</div><div class="ph-step-text"><h4>Ship & Deliver</h4><p>7–14 business days from approval</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAILED STEPS -->
+<section class="process-section">
+  <div class="section-label">The Details</div>
+  <h2 class="section-title">Each Step <em>Explained</em></h2>
+  <div class="process-big-steps fade-in">
+    <div class="big-step"><div class="big-step-num">01</div><div class="big-step-icon">📤</div><div class="big-step-title">Submit Your Design</div><p class="big-step-desc">Share your artwork, photos, or creative brief through our quote form, email, or by calling us directly. We work with what you have — from polished vector files to rough sketches.</p><ul class="big-step-detail"><li>Accepted: PNG, JPG, PDF, AI, EPS, PSD, SVG</li><li>300 DPI+ for photos & images</li><li>Vector files preferred for logos</li><li>No artwork? Our designers can help</li></ul></div>
+    <div class="big-step"><div class="big-step-num">02</div><div class="big-step-icon">🖥️</div><div class="big-step-title">Proof & Approval</div><p class="big-step-desc">Within 48 hours of receiving your files, we'll prepare a full digital proof showing exactly how your design will print — including colors, sizing, and placement. You review, request adjustments, and approve.</p><ul class="big-step-detail"><li>Digital proof delivered in 48 hours</li><li>Unlimited revision rounds until you're happy</li><li>Color-accurate proof to match final print</li><li>No production starts without your approval</li></ul></div>
+    <div class="big-step"><div class="big-step-num">03</div><div class="big-step-icon">🖨️</div><div class="big-step-title">Print & Production</div><p class="big-step-desc">Once you approve the proof, your order enters our production queue. We use premium inks and precision equipment, with quality checks at every stage of the printing and finishing process.</p><ul class="big-step-detail"><li>Production begins immediately after approval</li><li>Premium water-based & sublimation inks</li><li>Individual quality inspection on each piece</li><li>Color consistency guaranteed across all units</li></ul></div>
+    <div class="big-step"><div class="big-step-num">04</div><div class="big-step-icon">📦</div><div class="big-step-title">Ship & Deliver</div><p class="big-step-desc">Your completed order is carefully packaged and shipped via UPS or USPS with full tracking. Typical delivery from proof approval is 7–14 business days, with rush options available.</p><ul class="big-step-detail"><li>Shipped via UPS or USPS with tracking</li><li>Free shipping on orders over $150</li><li>Rush options: 3–5 business days</li><li>Gift packaging available on request</li></ul></div>
+  </div>
+</section>
+
+<!-- FILE SPECS -->
+<section class="files-section">
+  <div class="section-label">File Requirements</div>
+  <h2 class="section-title">Getting Your <em>Files Ready</em></h2>
+  <div class="files-grid fade-in">
+    <div class="files-col">
+      <h3>Accepted Formats</h3>
+      <ul class="files-list">
+        <li>PNG — Preferred for photos with transparency</li>
+        <li>JPG / JPEG — Standard photo format</li>
+        <li>PDF — Print-ready layouts and documents</li>
+        <li>AI (Adobe Illustrator) — Best for logos & vector art</li>
+        <li>EPS — Vector format, widely compatible</li>
+        <li>PSD (Photoshop) — Layered files welcome</li>
+        <li>SVG — Scalable vector for web-sourced artwork</li>
+      </ul>
+    </div>
+    <div class="files-col">
+      <h3>Quality Guidelines</h3>
+      <ul class="files-list">
+        <li>Minimum 300 DPI at final print size</li>
+        <li>Vector files (AI/EPS/SVG) preferred for logos</li>
+        <li>CMYK color mode when possible</li>
+        <li>Transparent background for logos (PNG or AI)</li>
+        <li>No watermarks on final submitted files</li>
+        <li>Embed all fonts before saving PDF</li>
+        <li>Maximum file size: 25MB per upload</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TURNAROUND -->
+<section class="turnaround-section">
+  <div class="section-label">Timing</div>
+  <h2 class="section-title">Turnaround <em>Options</em></h2>
+  <div class="turnaround-grid fade-in">
+    <div class="ta-card"><div class="ta-time">7–14</div><div class="ta-label">Business Days · Standard</div><p class="ta-desc">Our standard turnaround from proof approval. Ideal for most orders with a planned timeline.</p><p class="ta-price">Included in base pricing</p></div>
+    <div class="ta-card"><div class="ta-time">5–7</div><div class="ta-label">Business Days · Priority</div><p class="ta-desc">Priority processing for Professional-tier clients and orders of 12+ units. Moves your order to the front of the queue.</p><p class="ta-price">Available on 12+ unit orders</p></div>
+    <div class="ta-card"><div class="ta-time">3–5</div><div class="ta-label">Business Days · Rush</div><p class="ta-desc">Rush production for time-sensitive orders. Contact us to confirm availability before placing your order.</p><p class="ta-price">Rush fee applies — contact for pricing</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">Questions</div>
+  <h2 class="section-title">Frequently <em>Asked</em></h2>
+  <div class="faq-list-p fade-in">
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">What file formats do you accept? <span class="faq-icon-p">+</span></button><div class="faq-a-p">We accept PNG, JPG, PDF, AI (Adobe Illustrator), EPS, PSD, and SVG files. For best results, vector formats (AI, EPS, SVG) for logos and 300 DPI+ for photographs.</div></div>
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">What is your minimum order quantity? <span class="faq-icon-p">+</span></button><div class="faq-a-p">There is no minimum order — you can order as little as one piece. Best pricing starts at 12+ units. Contact us for bulk pricing on 50+ piece orders.</div></div>
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">Can you help if I don't have artwork? <span class="faq-icon-p">+</span></button><div class="faq-a-p">Yes! A free design consultation is included with every order. For full custom design work, a separate design fee may apply depending on complexity.</div></div>
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">How many proof revisions are included? <span class="faq-icon-p">+</span></button><div class="faq-a-p">We offer unlimited revisions on your digital proof until you're completely satisfied. Production never begins without your written approval.</div></div>
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">What is your return policy? <span class="faq-icon-p">+</span></button><div class="faq-a-p">If your items are defective or differ significantly from the approved proof, we will reprint or fully refund at no cost. Custom-made items cannot be returned for buyer's remorse.</div></div>
+    <div class="faq-item-p"><button class="faq-q-p" onclick="toggleFaq(this)">Do you ship internationally? <span class="faq-icon-p">+</span></button><div class="faq-a-p">We ship to all 50 US states via UPS and USPS. For international orders, please contact us directly at (404) 683-4961 for a custom shipping quote.</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="process-cta">
+  <h2>Ready to <em>Begin?</em></h2>
+  <p>Submit your project details and we'll send you a free quote within 24 hours. No commitment required.</p>
+  <a href="contact.html" class="btn-mid">Request a Free Quote →</a>
+</section>
+
+<footer>
+  <div class="footer-main"><div class="footer-brand"><div class="logo" style="color:var(--cream)">Kreative<span style="color:var(--gold)">.</span><sub style="color:var(--warm-gray-light)">Additions LLC</sub></div><p>Premium custom fabric printing for apparel, home décor, gifts, and branded merchandise.</p><div class="footer-socials"><a class="social-link" href="#">IG</a><a class="social-link" href="#">FB</a><a class="social-link" href="#">PT</a><a class="social-link" href="#">TK</a></div></div><div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Custom Apparel</a></li><li><a href="services.html">Home Décor</a></li><li><a href="services.html">Photo Printing</a></li><li><a href="services.html">Branded Merch</a></li><li><a href="services.html">Event Wear</a></li><li><a href="services.html">Gift Items</a></li></ul></div><div class="footer-col"><h4>Get in Touch</h4><ul><li>📍 344 Macroom Ct, Loganville, GA 30052</li><li><a href="tel:+14046834961">📞 (404) 683-4961</a></li><li><a href="mailto:bkngalame@gmail.com">✉ bkngalame@gmail.com</a></li><li>⏰ Mon–Fri, 9am–6pm EST</li></ul></div></div>
+  <div class="footer-bottom"><p>© 2025 Kreative Additions LLC. All rights reserved. · 344 Macroom Ct, Loganville, GA 30052 · <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a> · <a href="mailto:bkngalame@gmail.com" style="color:inherit">bkngalame@gmail.com</a></p><p>Designed with care · Printed with precision</p></div>
+</footer>
+<div class="chatbot-toggle" id="chatToggle" onclick="toggleChat()" title="Chat with us"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/></svg><div class="chatbot-badge">1</div></div>
+<div class="chatbot-window" id="chatWindow"><div class="chat-header"><div class="chat-avatar">KA</div><div class="chat-header-info"><h4>Kreative Additions</h4><p>● Online now</p></div><button class="chat-close" onclick="toggleChat()">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg bot"><div class="chat-bubble">👋 Questions about our process, turnaround times, or file requirements? I have answers!</div><div class="chat-time">Now</div></div></div><div class="chat-quick-btns"><button class="quick-btn" onclick="sendQuick('What are your turnaround times?')">Turnaround</button><button class="quick-btn" onclick="sendQuick('What file types do you accept?')">File Types</button><button class="quick-btn" onclick="sendQuick('Get a custom quote')">Get a Quote</button><button class="quick-btn" onclick="sendQuick('What is your return policy?')">Returns</button></div><div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>

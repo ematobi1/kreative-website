@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1A1814">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Contact — Kreative Additions LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── ESPRESSO / BRONZE THEME ── */
+  :root { --esp:#2C1810; --esp-dark:#150A06; --esp-mid:#4A2A1A; --bronze:#C47A35; --bronze-light:#F5EDE0; --bronze-pale:#FAF4EC; }
+
+  .ph { background:linear-gradient(135deg,var(--esp-dark) 0%,var(--esp) 60%,var(--esp-mid) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
+  .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='1' fill='rgba(196,122,53,0.12)'/%3E%3C/svg%3E") repeat; }
+  .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; text-align:center; }
+  .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--bronze); margin-bottom:24px; display:flex; align-items:center; justify-content:center; gap:16px; }
+  .ph-eyebrow::before,.ph-eyebrow::after { content:''; display:block; width:40px; height:1px; background:var(--bronze); }
+  .ph-title { font-family:var(--font-display); font-size:clamp(48px,6vw,80px); font-weight:300; color:#F5EFE0; line-height:1.05; margin-bottom:24px; }
+  .ph-title em { font-style:italic; color:var(--bronze); }
+  .ph-sub { font-size:16px; font-weight:300; color:rgba(245,237,224,.65); max-width:560px; margin:0 auto 48px; line-height:1.9; }
+  .ph-contact-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; max-width:1000px; margin:0 auto; }
+  .ph-card { background:rgba(196,122,53,.1); border:1px solid rgba(196,122,53,.2); padding:28px 20px; text-align:center; }
+  .ph-card-icon { font-size:24px; margin-bottom:12px; }
+  .ph-card-label { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:rgba(196,122,53,.7); margin-bottom:8px; }
+  .ph-card-value { font-size:13px; font-weight:300; color:#F5EFE0; line-height:1.5; }
+  .ph-card-value a { color:inherit; text-decoration:none; }
+  .ph-card-value a:hover { color:var(--bronze); }
+
+  .contact-main { padding:100px 8vw; background:var(--bronze-pale); }
+  .contact-grid { display:grid; grid-template-columns:1fr 400px; gap:64px; align-items:start; }
+  .contact-form-box { background:#fff; padding:52px 48px; border:1px solid rgba(196,122,53,.12); }
+  .contact-form-box h2 { font-family:var(--font-display); font-size:36px; font-weight:300; color:var(--esp-dark); margin-bottom:8px; }
+  .contact-form-box h2 em { font-style:italic; color:var(--bronze); }
+  .contact-form-box p { font-size:14px; font-weight:300; color:var(--warm-gray); margin-bottom:36px; line-height:1.7; }
+  .form-label-b { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--esp); font-weight:400; margin-bottom:8px; display:block; }
+  .form-input-b { width:100%; background:#FAF4EC; border:1px solid rgba(196,122,53,.2); padding:14px 18px; font-family:var(--font-body); font-size:14px; font-weight:300; color:var(--esp-dark); outline:none; transition:border-color .2s; }
+  .form-input-b:focus { border-color:var(--bronze); }
+  .form-select-b { width:100%; background:#FAF4EC; border:1px solid rgba(196,122,53,.2); padding:14px 18px; font-family:var(--font-body); font-size:14px; font-weight:300; color:var(--esp-dark); outline:none; transition:border-color .2s; appearance:none; }
+  .form-select-b:focus { border-color:var(--bronze); }
+  .form-textarea-b { width:100%; background:#FAF4EC; border:1px solid rgba(196,122,53,.2); padding:14px 18px; font-family:var(--font-body); font-size:14px; font-weight:300; color:var(--esp-dark); outline:none; resize:vertical; min-height:140px; transition:border-color .2s; }
+  .form-textarea-b:focus { border-color:var(--bronze); }
+  .form-row-b { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+  .form-group-b { margin-bottom:20px; }
+  .btn-bronze { display:inline-flex; align-items:center; gap:8px; background:var(--esp-dark); color:var(--bronze); font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:16px 36px; border:none; cursor:pointer; transition:all .25s; width:100%; justify-content:center; }
+  .btn-bronze:hover { background:var(--bronze); color:var(--esp-dark); }
+
+  .contact-info-box { display:flex; flex-direction:column; gap:24px; }
+  .info-box-card { background:#fff; padding:36px; border:1px solid rgba(196,122,53,.12); border-left:4px solid var(--bronze); }
+  .info-box-card h4 { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--esp-dark); margin-bottom:16px; }
+  .info-box-card p { font-size:14px; font-weight:300; color:var(--warm-gray); line-height:1.8; }
+  .info-box-card a { color:var(--bronze); text-decoration:none; }
+  .info-box-card a:hover { text-decoration:underline; }
+  .hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 20px; margin-top:8px; }
+  .hours-day { font-size:12px; font-weight:400; color:var(--esp-dark); }
+  .hours-time { font-size:12px; font-weight:300; color:var(--warm-gray); }
+
+  .map-section { padding:0 8vw 100px; background:var(--bronze-pale); }
+  .map-placeholder { background:var(--esp); height:320px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; }
+  .map-placeholder p { font-size:13px; font-weight:300; color:rgba(245,237,224,.5); letter-spacing:.08em; }
+  .map-address { font-family:var(--font-display); font-size:22px; font-weight:300; color:var(--bronze); }
+
+  .file-upload-section { padding:80px 8vw; background:var(--bronze-light); }
+  .file-upload-inner { max-width:700px; margin:0 auto; }
+  .file-upload-inner .section-title em { color:var(--bronze); }
+  .file-upload-inner p { font-size:15px; font-weight:300; color:var(--warm-gray); line-height:1.85; margin-bottom:36px; text-align:center; }
+  .form-file-area-b { border:2px dashed rgba(196,122,53,.35); padding:48px; text-align:center; cursor:pointer; background:#fff; transition:border-color .2s; }
+  .form-file-area-b:hover { border-color:var(--bronze); }
+  .form-file-area-b p { font-size:14px; font-weight:300; color:var(--warm-gray); margin:0; margin-top:12px; }
+  .file-preview-list-b { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+
+  .faq-contact { padding:100px 8vw; background:#fff; }
+  .faq-contact .section-title em { color:var(--bronze); }
+  .faq-grid-c { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:56px; max-width:1000px; margin-left:auto; margin-right:auto; }
+  .faq-item-c { border-bottom:1px solid rgba(196,122,53,.12); border-right:1px solid rgba(196,122,53,.08); padding:0; }
+  .faq-item-c:nth-child(even) { border-right:none; }
+  .faq-q-c { width:100%; background:none; border:none; padding:22px 28px; text-align:left; font-family:var(--font-body); font-size:14px; font-weight:300; color:var(--esp-dark); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .faq-q-c:hover { color:var(--bronze); }
+  .faq-icon-c { color:var(--bronze); font-size:18px; transition:transform .25s; flex-shrink:0; }
+  .faq-item-c.open .faq-icon-c { transform:rotate(45deg); }
+  .faq-a-c { display:none; padding:0 28px 20px; font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.85; }
+  .faq-item-c.open .faq-a-c { display:block; }
+
+  @media(max-width:1000px) { .contact-grid { grid-template-columns:1fr; } }
+  @media(max-width:900px) {
+    .ph-contact-cards { grid-template-columns:repeat(2,1fr); }
+    .form-row-b { grid-template-columns:1fr; }
+    .faq-grid-c { grid-template-columns:1fr; }
+    .faq-item-c { border-right:none; }
+    .ph { padding:80px 5vw 60px; }
+    .contact-main,.map-section,.file-upload-section,.faq-contact { padding:60px 5vw; }
+    .contact-form-box { padding:36px 28px; }
+    .ph-inner { text-align:center; }
+    .ph-eyebrow { justify-content:center; }
+    .ph-sub { margin:0 auto 40px; }
+    .hours-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:600px) {
+    .ph-contact-cards { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:480px) {
+    .ph-title { font-size:36px; }
+    .ph-contact-cards { grid-template-columns:1fr 1fr; gap:2px; }
+    .ph-card { padding:20px 12px; }
+    .ph-card-value { font-size:12px; }
+    .contact-form-box { padding:28px 20px; }
+    .contact-form-box h2 { font-size:26px; }
+    .btn-bronze { font-size:10px; padding:14px 24px; }
+    .map-placeholder { height:220px; }
+    .map-address { font-size:16px; text-align:center; padding:0 16px; }
+    .faq-q-c { font-size:13px; padding:18px 16px; }
+    .faq-a-c { padding:0 16px 16px; }
+    .info-box-card { padding:24px; }
+    .form-file-area-b { padding:32px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
+<div class="toast" id="toast"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="topbar">Free shipping on orders over $150 &nbsp;·&nbsp; Turnaround: 7–14 days &nbsp;·&nbsp; <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a></div>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="logo">Kreative<span>.</span><sub>Additions LLC</sub></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li></ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="closeMobile()">Home</a><a href="services.html" onclick="closeMobile()">Services</a><a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="shop.html" onclick="closeMobile()">Shop</a><a href="about.html" onclick="closeMobile()">About</a><a href="process.html" onclick="closeMobile()">Process</a><a href="blog.html" onclick="closeMobile()">Blog</a><a href="contact.html" onclick="closeMobile()">Contact</a></div>
+
+<!-- HERO -->
+<div class="ph">
+  <div class="ph-inner fade-in">
+    <div class="ph-eyebrow">Reach Out</div>
+    <h1 class="ph-title">Let's Create<br><em>Together</em></h1>
+    <p class="ph-sub">Whether you have a project in mind, a question about pricing, or just want to explore what's possible — our team is ready to help you every step of the way.</p>
+    <div class="ph-contact-cards">
+      <div class="ph-card"><div class="ph-card-icon">📞</div><div class="ph-card-label">Call Us</div><div class="ph-card-value"><a href="tel:+14046834961">(404) 683-4961</a></div></div>
+      <div class="ph-card"><div class="ph-card-icon">✉</div><div class="ph-card-label">Email Us</div><div class="ph-card-value"><a href="mailto:bkngalame@gmail.com">bkngalame@gmail.com</a></div></div>
+      <div class="ph-card"><div class="ph-card-icon">📍</div><div class="ph-card-label">Visit Us</div><div class="ph-card-value">344 Macroom Ct<br>Loganville, GA 30052</div></div>
+      <div class="ph-card"><div class="ph-card-icon">⏰</div><div class="ph-card-label">Hours</div><div class="ph-card-value">Mon–Fri<br>9am–6pm EST</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM + INFO -->
+<section class="contact-main">
+  <div class="contact-grid">
+    <!-- FORM -->
+    <div class="contact-form-box fade-in">
+      <h2>Send Us a <em>Message</em></h2>
+      <p>Fill out the form below and we'll respond within one business day. For urgent orders, call us directly at <a href="tel:+14046834961" style="color:var(--bronze)">(404) 683-4961</a>.</p>
+      <form onsubmit="submitContact(event)">
+        <div class="form-row-b">
+          <div><label class="form-label-b">First Name *</label><input class="form-input-b" type="text" required placeholder="Jane"></div>
+          <div><label class="form-label-b">Last Name *</label><input class="form-input-b" type="text" required placeholder="Smith"></div>
+        </div>
+        <div class="form-row-b">
+          <div><label class="form-label-b">Email Address *</label><input class="form-input-b" type="email" required placeholder="jane@example.com"></div>
+          <div><label class="form-label-b">Phone Number</label><input class="form-input-b" type="tel" placeholder="(555) 000-0000"></div>
+        </div>
+        <div class="form-group-b"><label class="form-label-b">Subject *</label>
+          <select class="form-select-b" required>
+            <option value="">Select a topic</option>
+            <option>Custom Quote Request</option>
+            <option>Order Status</option>
+            <option>Design Assistance</option>
+            <option>Bulk / Wholesale Inquiry</option>
+            <option>File Submission</option>
+            <option>General Question</option>
+          </select>
+        </div>
+        <div class="form-row-b">
+          <div><label class="form-label-b">Product Type</label>
+            <select class="form-select-b">
+              <option value="">Select product</option>
+              <option>Custom Apparel (T-shirts, Hoodies)</option>
+              <option>Home Décor (Pillows, Wall Art)</option>
+              <option>Tote Bags & Accessories</option>
+              <option>Branded Merchandise</option>
+              <option>Event / Team Wear</option>
+              <option>Photo Gifts & Keepsakes</option>
+              <option>Other / Custom</option>
+            </select>
+          </div>
+          <div><label class="form-label-b">Estimated Quantity</label>
+            <select class="form-select-b">
+              <option value="">Select quantity</option>
+              <option>1–10 pieces</option><option>11–50 pieces</option>
+              <option>51–100 pieces</option><option>101–250 pieces</option>
+              <option>250+ pieces</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group-b"><label class="form-label-b">Message *</label><textarea class="form-textarea-b" required placeholder="Tell us about your project, questions, or requirements..."></textarea></div>
+        <div class="form-group-b" style="display:flex;align-items:flex-start;gap:10px">
+          <input type="checkbox" id="consent" style="margin-top:3px;accent-color:var(--bronze);width:16px;height:16px" required>
+          <label for="consent" style="font-size:12px;font-weight:300;color:var(--warm-gray);line-height:1.6;cursor:pointer">I agree to be contacted by Kreative Additions LLC regarding my inquiry and consent to receiving updates.</label>
+        </div>
+        <button type="submit" class="btn-bronze">Send Message →</button>
+      </form>
+    </div>
+
+    <!-- INFO CARDS -->
+    <div class="contact-info-box fade-in" style="transition-delay:.15s">
+      <div class="info-box-card">
+        <h4>📞 Phone</h4>
+        <p><a href="tel:+14046834961">(404) 683-4961</a><br>Call us Monday–Friday for immediate assistance with your order or project.</p>
+      </div>
+      <div class="info-box-card">
+        <h4>✉ Email</h4>
+        <p><a href="mailto:bkngalame@gmail.com">bkngalame@gmail.com</a><br>We respond to all emails within one business day. Attach your design files directly.</p>
+      </div>
+      <div class="info-box-card">
+        <h4>📍 Address</h4>
+        <p>344 Macroom Ct<br>Loganville, GA 30052<br><br>By appointment only. Please call ahead before visiting.</p>
+      </div>
+      <div class="info-box-card">
+        <h4>⏰ Business Hours</h4>
+        <div class="hours-grid">
+          <span class="hours-day">Monday</span><span class="hours-time">9:00am – 6:00pm</span>
+          <span class="hours-day">Tuesday</span><span class="hours-time">9:00am – 6:00pm</span>
+          <span class="hours-day">Wednesday</span><span class="hours-time">9:00am – 6:00pm</span>
+          <span class="hours-day">Thursday</span><span class="hours-time">9:00am – 6:00pm</span>
+          <span class="hours-day">Friday</span><span class="hours-time">9:00am – 6:00pm</span>
+          <span class="hours-day">Saturday–Sunday</span><span class="hours-time">Closed</span>
+        </div>
+      </div>
+      <div class="info-box-card" style="border-left-color:var(--esp)">
+        <h4>⚡ Response Guarantee</h4>
+        <p>We respond to every inquiry within one business day. Quote requests are typically turned around within 24 hours of submission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-section">
+  <div class="map-placeholder">
+    <div class="map-address">344 Macroom Ct, Loganville, GA 30052</div>
+    <p>Interactive map — embed Google Maps API here</p>
+  </div>
+</div>
+
+<!-- FILE UPLOAD -->
+<section class="file-upload-section">
+  <div class="file-upload-inner">
+    <div class="section-label" style="text-align:center;justify-content:center">Send Your Files</div>
+    <h2 class="section-title" style="text-align:center">Upload Your <em style="color:var(--bronze)">Design Files</em></h2>
+    <p>Have artwork ready? Upload your design files, logos, or inspiration images below and we'll include them with your inquiry for a faster quote.</p>
+    <div class="form-file-area-b" onclick="document.getElementById('c-files').click()">
+      <input type="file" id="c-files" multiple accept="image/*,.pdf,.ai,.eps,.psd,.svg" onchange="handleFiles(event)" style="display:none">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="1" style="margin:0 auto 12px;display:block"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+      <p><strong>Click to upload</strong> or drag and drop<br>PNG, JPG, PDF, AI, EPS, PSD, SVG · Max 25MB each</p>
+      <div class="file-preview-list-b" id="filePreview"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-contact">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-title">Before You <em>Reach Out</em></h2>
+  <div class="faq-grid-c fade-in">
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">What is the minimum order quantity? <span class="faq-icon-c">+</span></button><div class="faq-a-c">No minimum — order as little as 1 piece. Best bulk pricing starts at 12+ units.</div></div>
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">How quickly do you respond to quotes? <span class="faq-icon-c">+</span></button><div class="faq-a-c">We respond to all quote requests within 24 hours on business days (Mon–Fri).</div></div>
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">What file formats do you need? <span class="faq-icon-c">+</span></button><div class="faq-a-c">PNG, JPG, PDF, AI, EPS, PSD, or SVG. Minimum 300 DPI for photos. Vector preferred for logos.</div></div>
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">Do you offer rush orders? <span class="faq-icon-c">+</span></button><div class="faq-a-c">Yes — rush 3–5 business day production is available for an additional fee. Contact us to confirm availability.</div></div>
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">Can you help create my design? <span class="faq-icon-c">+</span></button><div class="faq-a-c">Yes! A free design consultation is included with every order. Complex custom design work may carry an additional fee.</div></div>
+    <div class="faq-item-c"><button class="faq-q-c" onclick="toggleFaq(this)">Do you ship nationwide? <span class="faq-icon-c">+</span></button><div class="faq-a-c">Yes, we ship to all 50 US states via UPS and USPS. Free shipping on orders over $150.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main"><div class="footer-brand"><div class="logo" style="color:var(--cream)">Kreative<span style="color:var(--gold)">.</span><sub style="color:var(--warm-gray-light)">Additions LLC</sub></div><p>Premium custom fabric printing for apparel, home décor, gifts, and branded merchandise.</p><div class="footer-socials"><a class="social-link" href="#">IG</a><a class="social-link" href="#">FB</a><a class="social-link" href="#">PT</a><a class="social-link" href="#">TK</a></div></div><div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Custom Apparel</a></li><li><a href="services.html">Home Décor</a></li><li><a href="services.html">Photo Printing</a></li><li><a href="services.html">Branded Merch</a></li><li><a href="services.html">Event Wear</a></li><li><a href="services.html">Gift Items</a></li></ul></div><div class="footer-col"><h4>Get in Touch</h4><ul><li>📍 344 Macroom Ct, Loganville, GA 30052</li><li><a href="tel:+14046834961">📞 (404) 683-4961</a></li><li><a href="mailto:bkngalame@gmail.com">✉ bkngalame@gmail.com</a></li><li>⏰ Mon–Fri, 9am–6pm EST</li></ul></div></div>
+  <div class="footer-bottom"><p>© 2025 Kreative Additions LLC. All rights reserved. · 344 Macroom Ct, Loganville, GA 30052 · <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a> · <a href="mailto:bkngalame@gmail.com" style="color:inherit">bkngalame@gmail.com</a></p><p>Designed with care · Printed with precision</p></div>
+</footer>
+<div class="chatbot-toggle" id="chatToggle" onclick="toggleChat()" title="Chat with us"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/></svg><div class="chatbot-badge">1</div></div>
+<div class="chatbot-window" id="chatWindow"><div class="chat-header"><div class="chat-avatar">KA</div><div class="chat-header-info"><h4>Kreative Additions</h4><p>● Online now</p></div><button class="chat-close" onclick="toggleChat()">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg bot"><div class="chat-bubble">👋 Hi! Ready to start your project? I can help answer questions before you fill out the form — or just ask anything!</div><div class="chat-time">Now</div></div></div><div class="chat-quick-btns"><button class="quick-btn" onclick="sendQuick('Get a custom quote')">Get a Quote</button><button class="quick-btn" onclick="sendQuick('What are your business hours?')">Hours</button><button class="quick-btn" onclick="sendQuick('Where are you located?')">Location</button><button class="quick-btn" onclick="sendQuick('What are your turnaround times?')">Turnaround</button></div><div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1A1814">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Shop — Kreative Additions LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── BURGUNDY / ROSE GOLD THEME ── */
+  :root { --burg:#6B1A35; --burg-dark:#3D0A1C; --burg-mid:#8A2545; --rosegold:#C49A7E; --rosegold-light:#F2E5DB; }
+
+  .ph { background:linear-gradient(135deg,var(--burg-dark) 0%,var(--burg) 55%,var(--burg-mid) 100%); padding:100px 8vw 80px; position:relative; overflow:hidden; }
+  .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='40' height='40' fill='none' stroke='rgba(196,154,126,0.06)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
+  .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:40px; }
+  .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--rosegold); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+  .ph-eyebrow::before { content:''; display:block; width:32px; height:1px; background:var(--rosegold); }
+  .ph-title { font-family:var(--font-display); font-size:clamp(40px,5vw,68px); font-weight:300; color:#F5EFE0; line-height:1.1; margin-bottom:20px; }
+  .ph-title em { font-style:italic; color:var(--rosegold); }
+  .ph-sub { font-size:15px; font-weight:300; color:rgba(242,229,219,.75); max-width:480px; line-height:1.85; margin-bottom:40px; }
+  .btn-burg { display:inline-flex; align-items:center; gap:8px; background:var(--rosegold); color:var(--burg-dark); font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:15px 32px; border:none; cursor:pointer; transition:all .25s; text-decoration:none; }
+  .btn-burg:hover { background:#DEB8A2; }
+  .btn-burg-outline { display:inline-flex; align-items:center; background:transparent; color:#F5EFE0; font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:.16em; text-transform:uppercase; padding:14px 32px; border:1px solid rgba(196,154,126,.4); cursor:pointer; transition:all .25s; text-decoration:none; }
+  .btn-burg-outline:hover { border-color:var(--rosegold); color:var(--rosegold); }
+  .ph-promo { background:rgba(196,154,126,.15); border:1px solid rgba(196,154,126,.3); padding:20px 28px; }
+  .ph-promo-label { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--rosegold); margin-bottom:6px; }
+  .ph-promo p { font-size:14px; font-weight:300; color:#F5EFE0; line-height:1.6; }
+
+  .categories-section { padding:80px 8vw; background:var(--rosegold-light); }
+  .cat-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:3px; margin-top:48px; }
+  .cat-tile { background:var(--burg); padding:40px 20px; text-align:center; cursor:pointer; transition:all .3s; position:relative; overflow:hidden; }
+  .cat-tile::after { content:''; position:absolute; inset:0; background:var(--rosegold); transform:scaleY(0); transform-origin:bottom; transition:transform .3s; z-index:0; }
+  .cat-tile:hover::after { transform:scaleY(1); }
+  .cat-tile-content { position:relative; z-index:1; }
+  .cat-icon { font-size:28px; margin-bottom:12px; }
+  .cat-name { font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#F5EFE0; font-weight:400; transition:color .3s; }
+  .cat-tile:hover .cat-name { color:var(--burg-dark); }
+
+  .shop-section { padding:80px 8vw 100px; background:#FFF8F5; }
+  .shop-layout { display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; }
+  .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .product-card-b { background:#fff; border:1px solid rgba(107,26,53,.1); overflow:hidden; transition:all .3s; }
+  .product-card-b:hover { border-color:var(--burg); box-shadow:0 8px 32px rgba(107,26,53,.12); transform:translateY(-2px); }
+  .product-image-b { background:var(--burg-dark); aspect-ratio:1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .product-badge-b { position:absolute; top:12px; left:12px; font-size:9px; letter-spacing:.14em; text-transform:uppercase; padding:5px 12px; font-weight:600; }
+  .badge-seller-b { background:var(--rosegold); color:var(--burg-dark); }
+  .badge-new-b { background:var(--burg); color:var(--rosegold-light); border:1px solid rgba(196,154,126,.3); }
+  .product-info-b { padding:24px 24px 28px; }
+  .product-cat-b { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--rosegold); margin-bottom:8px; font-weight:500; }
+  .product-name-b { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--burg-dark); margin-bottom:10px; }
+  .product-desc-b { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.75; margin-bottom:20px; }
+  .product-footer-b { display:flex; justify-content:space-between; align-items:center; }
+  .product-price-b { font-family:var(--font-display); font-size:28px; font-weight:300; color:var(--burg); }
+  .product-price-b small { font-family:var(--font-body); font-size:12px; color:var(--warm-gray); }
+  .btn-add-b { font-size:10px; letter-spacing:.14em; text-transform:uppercase; background:var(--burg); color:var(--rosegold-light); border:none; padding:10px 18px; cursor:pointer; font-family:var(--font-body); transition:all .25s; }
+  .btn-add-b:hover { background:var(--burg-mid); }
+
+  .cart-sidebar { background:var(--burg-dark); padding:36px 32px; position:sticky; top:100px; }
+  .cart-sidebar h3 { font-family:var(--font-display); font-size:22px; font-weight:300; color:#F5EFE0; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid rgba(196,154,126,.2); }
+  #cartItems .summary-item { color:#F5EFE0 !important; border-color:rgba(196,154,126,.15) !important; }
+  #cartItems .summary-item span:last-child { color:var(--rosegold) !important; }
+  .cart-total { display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-top:1px solid rgba(196,154,126,.3); margin-top:16px; }
+  .cart-total-label { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(242,229,219,.6); }
+  .cart-total-price { font-family:var(--font-display); font-size:28px; font-weight:300; color:var(--rosegold); }
+  .cart-empty { font-size:13px; font-weight:300; color:rgba(242,229,219,.4); text-align:center; padding:32px 0; }
+
+  .checkout-strip { background:var(--burg); padding:60px 8vw; }
+  .checkout-strip .section-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+  .checkout-strip h3 { font-family:var(--font-display); font-size:28px; font-weight:300; color:#F5EFE0; }
+  .checkout-strip h3 em { font-style:italic; color:var(--rosegold); }
+  .checkout-strip p { font-size:14px; font-weight:300; color:rgba(242,229,219,.7); margin-top:6px; }
+
+  @media(max-width:1100px) { .shop-layout { grid-template-columns:1fr; } .cart-sidebar { position:static; } }
+  @media(max-width:900px) {
+    .cat-grid { grid-template-columns:repeat(3,1fr); }
+    .products-grid { grid-template-columns:1fr 1fr; }
+    .ph { padding:70px 5vw 60px; }
+    .categories-section,.shop-section { padding:60px 5vw; }
+    .ph-inner { flex-direction:column; align-items:flex-start; }
+    .ph-promo { width:100%; }
+    .btn-burg, .btn-burg-outline { width:100%; justify-content:center; }
+    .checkout-strip .section-inner { flex-direction:column; }
+  }
+  @media(max-width:600px) {
+    .cat-grid { grid-template-columns:repeat(2,1fr); }
+    .products-grid { grid-template-columns:1fr; }
+  }
+  @media(max-width:480px) {
+    .cat-grid { grid-template-columns:repeat(2,1fr); }
+    .cat-tile { padding:28px 12px; }
+    .ph-title { font-size:34px; }
+    .product-footer-b { flex-direction:column; gap:12px; align-items:flex-start; }
+    .btn-add-b { width:100%; text-align:center; padding:12px; }
+    .cart-sidebar { padding:24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
+<div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
+<div class="toast" id="toast"></div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="topbar">Free shipping on orders over $150 &nbsp;·&nbsp; Turnaround: 7–14 days &nbsp;·&nbsp; <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a></div>
+<nav id="mainNav"><div class="nav-inner">
+  <a href="index.html" class="logo">Kreative<span>.</span><sub>Additions LLC</sub></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li></ul>
+  <button class="nav-mobile-btn" id="mobileBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="closeMobile()">Home</a><a href="services.html" onclick="closeMobile()">Services</a><a href="gallery.html" onclick="closeMobile()">Gallery</a><a href="shop.html" onclick="closeMobile()">Shop</a><a href="about.html" onclick="closeMobile()">About</a><a href="process.html" onclick="closeMobile()">Process</a><a href="blog.html" onclick="closeMobile()">Blog</a><a href="contact.html" onclick="closeMobile()">Contact</a></div>
+
+<!-- HERO -->
+<div class="ph">
+  <div class="ph-inner">
+    <div>
+      <div class="ph-eyebrow">Ready to Order</div>
+      <h1 class="ph-title">Wear Your <em>Vision</em></h1>
+      <p class="ph-sub">Browse our most popular product categories — every item is fully customizable with your design, artwork, or brand identity. No minimum order required.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#products" class="btn-burg">Browse Products →</a>
+        <a href="contact.html" class="btn-burg-outline">Request Custom Quote</a>
+      </div>
+    </div>
+    <div class="ph-promo">
+      <div class="ph-promo-label">Current Promotion</div>
+      <p>Free shipping on all orders<br>over $150 · Code: <strong>KREATIVE</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="section-label">Browse By</div>
+  <h2 class="section-title">Product <em>Categories</em></h2>
+  <div class="cat-grid fade-in">
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">👕</div><div class="cat-name">Apparel</div></div></div>
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">🏠</div><div class="cat-name">Home Décor</div></div></div>
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">🎁</div><div class="cat-name">Gift Items</div></div></div>
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">🏷️</div><div class="cat-name">Branded</div></div></div>
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">🎉</div><div class="cat-name">Event Wear</div></div></div>
+    <div class="cat-tile"><div class="cat-tile-content"><div class="cat-icon">📷</div><div class="cat-name">Photo Prints</div></div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS + CART -->
+<section class="shop-section" id="products">
+  <div class="section-label">Featured Products</div>
+  <h2 class="section-title">Shop <em>Our Collection</em></h2>
+  <div class="shop-layout">
+    <div>
+      <div class="products-grid fade-in">
+        <div class="product-card-b">
+          <div class="product-image-b"><div class="product-badge-b badge-seller-b">Best Seller</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Apparel</div><div class="product-name-b">Custom Printed Tee</div><p class="product-desc-b">100% premium cotton, all-over print. Sizes XS–5XL. Minimum: 1 piece.</p><div class="product-footer-b"><div class="product-price-b">$28<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Custom Printed Tee',28)">Add to Cart</button></div></div>
+        </div>
+        <div class="product-card-b">
+          <div class="product-image-b"><div class="product-badge-b badge-new-b">New</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Home Décor</div><div class="product-name-b">Photo Throw Pillow</div><p class="product-desc-b">18"×18" double-sided print. Fade-resistant, machine washable.</p><div class="product-footer-b"><div class="product-price-b">$42<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Photo Throw Pillow',42)">Add to Cart</button></div></div>
+        </div>
+        <div class="product-card-b">
+          <div class="product-image-b"><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Gifts</div><div class="product-name-b">Custom Canvas Tote</div><p class="product-desc-b">Heavy-duty 12oz canvas. Full front print, natural or black base.</p><div class="product-footer-b"><div class="product-price-b">$18<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Custom Canvas Tote',18)">Add to Cart</button></div></div>
+        </div>
+        <div class="product-card-b">
+          <div class="product-image-b"><div class="product-badge-b badge-seller-b">Popular</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Branded</div><div class="product-name-b">Branded Hoodie</div><p class="product-desc-b">Soft-fleece pullover with custom front or back print. Teams & events.</p><div class="product-footer-b"><div class="product-price-b">$55<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Branded Hoodie',55)">Add to Cart</button></div></div>
+        </div>
+        <div class="product-card-b">
+          <div class="product-image-b"><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Photo Prints</div><div class="product-name-b">Photo Memory Scarf</div><p class="product-desc-b">Lightweight polyester satin. 60"×20". Perfect for memorials and gifts.</p><div class="product-footer-b"><div class="product-price-b">$35<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Photo Memory Scarf',35)">Add to Cart</button></div></div>
+        </div>
+        <div class="product-card-b">
+          <div class="product-image-b"><div class="product-badge-b badge-new-b">New</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-info-b"><div class="product-cat-b">Home Décor</div><div class="product-name-b">Wall Tapestry</div><p class="product-desc-b">Woven polyester wall hanging. Custom sizing up to 60"×80". Vivid colors.</p><div class="product-footer-b"><div class="product-price-b">$68<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Wall Tapestry',68)">Add to Cart</button></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar">
+      <h3>Your Cart</h3>
+      <div id="cartItems"><div class="cart-empty">Your cart is empty.<br>Add items above.</div></div>
+      <div class="cart-total"><span class="cart-total-label">Order Total</span><span class="cart-total-price">$0.00</span></div>
+      <button class="btn-burg" style="width:100%;justify-content:center;margin-top:16px;padding:16px" onclick="showToast('Proceed to checkout — connect your payment backend to complete.')">Checkout →</button>
+      <p style="font-size:11px;font-weight:300;color:rgba(242,229,219,.45);text-align:center;margin-top:16px;line-height:1.6;">Secure payment · Free shipping $150+<br>Digital proof included with every order</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT STRIP -->
+<section class="checkout-strip">
+  <div class="section-inner">
+    <div><h3>Need a <em>Custom Quote?</em></h3><p>Bulk orders, special sizes, or unique requirements — we'll build a custom package for you.</p></div>
+    <a href="contact.html" class="btn-burg">Request a Quote →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main"><div class="footer-brand"><div class="logo" style="color:var(--cream)">Kreative<span style="color:var(--gold)">.</span><sub style="color:var(--warm-gray-light)">Additions LLC</sub></div><p>Premium custom fabric printing for apparel, home décor, gifts, and branded merchandise.</p><div class="footer-socials"><a class="social-link" href="#">IG</a><a class="social-link" href="#">FB</a><a class="social-link" href="#">PT</a><a class="social-link" href="#">TK</a></div></div><div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="process.html">Our Process</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Custom Apparel</a></li><li><a href="services.html">Home Décor</a></li><li><a href="services.html">Photo Printing</a></li><li><a href="services.html">Branded Merch</a></li><li><a href="services.html">Event Wear</a></li><li><a href="services.html">Gift Items</a></li></ul></div><div class="footer-col"><h4>Get in Touch</h4><ul><li>📍 344 Macroom Ct, Loganville, GA 30052</li><li><a href="tel:+14046834961">📞 (404) 683-4961</a></li><li><a href="mailto:bkngalame@gmail.com">✉ bkngalame@gmail.com</a></li><li>⏰ Mon–Fri, 9am–6pm EST</li></ul></div></div>
+  <div class="footer-bottom"><p>© 2025 Kreative Additions LLC. All rights reserved. · 344 Macroom Ct, Loganville, GA 30052 · <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a> · <a href="mailto:bkngalame@gmail.com" style="color:inherit">bkngalame@gmail.com</a></p><p>Designed with care · Printed with precision</p></div>
+</footer>
+<div class="chatbot-toggle" id="chatToggle" onclick="toggleChat()" title="Chat with us"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/></svg><div class="chatbot-badge">1</div></div>
+<div class="chatbot-window" id="chatWindow"><div class="chat-header"><div class="chat-avatar">KA</div><div class="chat-header-info"><h4>Kreative Additions</h4><p>● Online now</p></div><button class="chat-close" onclick="toggleChat()">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-msg bot"><div class="chat-bubble">👋 Looking for something specific? I can help with product details, pricing, bulk orders, and more!</div><div class="chat-time">Now</div></div></div><div class="chat-quick-btns"><button class="quick-btn" onclick="sendQuick('Get a custom quote')">Get a Quote</button><button class="quick-btn" onclick="sendQuick('What are your turnaround times?')">Turnaround</button><button class="quick-btn" onclick="sendQuick('Bulk order pricing')">Bulk Pricing</button><button class="quick-btn" onclick="sendQuick('What payment methods do you accept?')">Payment</button></div><div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="chat-send" onclick="sendChat()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div></div>
+<script src="js/main.js"></script>
+</body>
+</html>
