@@ -103,11 +103,13 @@
     display: flex;
     align-items: center;
     line-height: 1;
+    flex-shrink: 0;
   }
   .nav-logo-img {
-    height: 200px;
-    width: auto;
+    height: 200px !important;
+    width: auto !important;
     display: block;
+    max-width: none !important;
   }
   .nav-links {
     display: flex; align-items: center; gap: 22px;
