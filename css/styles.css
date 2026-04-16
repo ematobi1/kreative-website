@@ -104,9 +104,11 @@
     align-items: center;
     line-height: 1;
   }
-  .logo img { height: 200px; width: auto; display: block; }
-  @media (max-width: 768px) { .logo img { height: 150px; } }
-  @media (max-width: 480px) { .logo img { height: 120px; } }
+  .nav-logo-img {
+    height: 200px;
+    width: auto;
+    display: block;
+  }
   .nav-links {
     display: flex; align-items: center; gap: 22px;
     list-style: none;
@@ -1168,7 +1170,7 @@
     .footer-col ul li { font-size: 13px; }
     .chatbot-window { width: calc(100vw - 16px); right: 8px; left: 8px; }
     .quick-btn { font-size: 9px; padding: 5px 8px; }
-    .logo { font-size: 18px; }
+    .nav-logo-img { height: 120px; }
     .loader-logo { font-size: 24px; }
     .btn-primary, .btn-outline { padding: 13px 20px; font-size: 10px; }
     .back-top { width: 40px; height: 40px; font-size: 14px; }
