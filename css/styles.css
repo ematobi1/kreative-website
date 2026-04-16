@@ -15,7 +15,7 @@
     --shadow-lg: 0 12px 60px rgba(26,24,20,0.14);
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Jost', sans-serif;
-    --nav-h: 120px;
+    --nav-h: 220px;
     --radius: 2px;
     --radius-lg: 6px;
   }
@@ -104,9 +104,9 @@
     align-items: center;
     line-height: 1;
   }
-  .logo img { height: 108px; width: auto; display: block; }
-  @media (max-width: 768px) { .logo img { height: 80px; } }
-  @media (max-width: 480px) { .logo img { height: 64px; } }
+  .logo img { height: 200px; width: auto; display: block; }
+  @media (max-width: 768px) { .logo img { height: 150px; } }
+  @media (max-width: 480px) { .logo img { height: 120px; } }
   .nav-links {
     display: flex; align-items: center; gap: 22px;
     list-style: none;
