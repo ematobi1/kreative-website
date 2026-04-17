@@ -367,67 +367,53 @@
 </div>
 <script src="js/main.js"></script>
 <script>
+/* ── Floating KA logos — evenly zoned, no overlap ── */
 (function() {
   var container = document.getElementById('ka-floats');
-  var count = 10;
-  var configs = [
-    { size:55,  x:8,   y:12,  dur:18, delay:0,    op:0.10 },
-    { size:40,  x:72,  y:8,   dur:24, delay:-7,   op:0.08 },
-    { size:70,  x:45,  y:55,  dur:20, delay:-12,  op:0.07 },
-    { size:48,  x:85,  y:70,  dur:15, delay:-3,   op:0.11 },
-    { size:35,  x:20,  y:80,  dur:22, delay:-18,  op:0.09 },
-    { size:62,  x:60,  y:30,  dur:17, delay:-9,   op:0.07 },
-    { size:44,  x:90,  y:40,  dur:26, delay:-5,   op:0.10 },
-    { size:38,  x:35,  y:90,  dur:19, delay:-14,  op:0.08 },
-    { size:58,  x:5,   y:50,  dur:23, delay:-2,   op:0.09 },
-    { size:42,  x:55,  y:75,  dur:16, delay:-20,  op:0.11 }
-  ];
-  var moves = [
-    'translate(120px,-80px) rotate(12deg)',
-    'translate(-90px,110px) rotate(-8deg)',
-    'translate(70px,130px) rotate(15deg)',
-    'translate(-130px,-60px) rotate(-18deg)',
-    'translate(100px,90px) rotate(10deg)',
-    'translate(-80px,-120px) rotate(-12deg)',
-    'translate(140px,-50px) rotate(20deg)',
-    'translate(-60px,100px) rotate(-15deg)',
-    'translate(90px,-130px) rotate(8deg)',
-    'translate(-110px,70px) rotate(-10deg)'
-  ];
-  var mid = [
-    'translate(-60px,60px) rotate(-6deg)',
-    'translate(50px,-80px) rotate(5deg)',
-    'translate(-40px,-90px) rotate(-10deg)',
-    'translate(80px,40px) rotate(9deg)',
-    'translate(-70px,50px) rotate(-7deg)',
-    'translate(60px,80px) rotate(6deg)',
-    'translate(-90px,-30px) rotate(-11deg)',
-    'translate(40px,-60px) rotate(8deg)',
-    'translate(-50px,80px) rotate(-5deg)',
-    'translate(70px,-40px) rotate(7deg)'
+  if (!container) return;
+
+  /* 8 fixed zones covering the viewport — each logo stays in its own cell */
+  var zones = [
+    { x:3,  y:5  }, { x:36, y:3  }, { x:68, y:5  },
+    { x:2,  y:42 },                  { x:72, y:40 },
+    { x:4,  y:76 }, { x:36, y:74 }, { x:70, y:75 }
   ];
 
-  configs.forEach(function(c, i) {
+  var size   = 90;   /* uniform size — clean and consistent */
+  var drift  = 22;   /* max px each logo drifts — stays inside its zone */
+  var op     = 0.10; /* subtle opacity */
+
+  zones.forEach(function(z, i) {
+    /* small random drift vectors that never go far enough to overlap */
+    var dx1 =  (i % 2 === 0 ? 1 : -1) * (10 + (i * 3) % drift);
+    var dy1 =  (i % 3 === 0 ? -1 : 1) * (8  + (i * 4) % drift);
+    var dx2 = -dx1 * 0.6;
+    var dy2 = -dy1 * 0.8;
+    var dur  = 14 + (i * 2.5) % 10;  /* 14 – 24 s, staggered */
+    var del  = -(i * 3.1);            /* immediate staggered start */
+
     var el = document.createElement('img');
     el.src = 'assets/images/logo.png';
-    el.className = 'ka-float';
     el.setAttribute('aria-hidden', 'true');
     el.style.cssText = [
-      'width:' + c.size + 'px',
-      'left:' + c.x + '%',
-      'top:' + c.y + '%',
-      'opacity:' + c.op,
-      'animation:kaF' + i + ' ' + c.dur + 's ease-in-out ' + c.delay + 's infinite'
+      'position:absolute',
+      'width:' + size + 'px',
+      'height:auto',
+      'left:' + z.x + '%',
+      'top:'  + z.y + '%',
+      'opacity:' + op,
+      'pointer-events:none',
+      'animation:kaZ' + i + ' ' + dur + 's ease-in-out ' + del + 's infinite'
     ].join(';');
     container.appendChild(el);
 
     var s = document.createElement('style');
     s.textContent =
-      '@keyframes kaF' + i + '{' +
-        '0%{transform:translate(0,0) rotate(0deg);opacity:' + c.op + '}' +
-        '33%{transform:' + moves[i] + ';opacity:' + (c.op * 1.4) + '}' +
-        '66%{transform:' + mid[i] + ';opacity:' + (c.op * 0.6) + '}' +
-        '100%{transform:translate(0,0) rotate(0deg);opacity:' + c.op + '}' +
+      '@keyframes kaZ' + i + '{' +
+        '0%  {transform:translate(0px,0px) rotate(0deg);opacity:' + op + '}' +
+        '35% {transform:translate(' + dx1 + 'px,' + dy1 + 'px) rotate(' + (dx1 * 0.12) + 'deg);opacity:' + (op + 0.03) + '}' +
+        '65% {transform:translate(' + dx2 + 'px,' + dy2 + 'px) rotate(' + (dy2 * 0.1) + 'deg);opacity:' + (op - 0.02) + '}' +
+        '100%{transform:translate(0px,0px) rotate(0deg);opacity:' + op + '}' +
       '}';
     document.head.appendChild(s);
   });
