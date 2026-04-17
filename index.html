@@ -112,7 +112,7 @@
 <div class="toast" id="toast"></div>
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <div class="lightbox-img"><p>Image placeholder</p></div>
+  <div class="lightbox-img"><img id="lightboxImg" src="" alt="Gallery image" style="max-width:90vw;max-height:85vh;object-fit:contain;display:block;margin:0 auto;border:3px solid rgba(201,168,76,0.4);"></div>
 </div>
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
@@ -238,19 +238,19 @@
   <div class="section-label">Portfolio</div>
   <h2 class="section-title">Our <em>Work</em></h2>
   <div class="gp-grid fade-in">
-    <div class="gp-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodies.jpeg');background-size:cover;background-position:center;">
+    <div class="gp-item" onclick="openLightbox('assets/images/gallery-hoodies.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodies.jpeg');background-size:cover;background-position:center;">
       <div class="gp-overlay"><span class="gp-label">Custom Hoodies</span></div>
     </div>
-    <div class="gp-item" onclick="openLightbox()" data-cat="decor" style="background-image:url('assets/images/gallery-candles.jpeg');background-size:cover;background-position:center;">
+    <div class="gp-item" onclick="openLightbox('assets/images/gallery-candles.jpeg')" data-cat="decor" style="background-image:url('assets/images/gallery-candles.jpeg');background-size:cover;background-position:center;">
       <div class="gp-overlay"><span class="gp-label">Custom Candle Labels</span></div>
     </div>
-    <div class="gp-item" onclick="openLightbox()" data-cat="branded" style="background-image:url('assets/images/gallery-corporate.jpeg');background-size:cover;background-position:center;">
+    <div class="gp-item" onclick="openLightbox('assets/images/gallery-corporate.jpeg')" data-cat="branded" style="background-image:url('assets/images/gallery-corporate.jpeg');background-size:cover;background-position:center;">
       <div class="gp-overlay"><span class="gp-label">Corporate Tees</span></div>
     </div>
-    <div class="gp-item" onclick="openLightbox()" data-cat="gifts" style="background-image:url('assets/images/gallery-anniversary.jpeg');background-size:cover;background-position:center;">
+    <div class="gp-item" onclick="openLightbox('assets/images/gallery-anniversary.jpeg')" data-cat="gifts" style="background-image:url('assets/images/gallery-anniversary.jpeg');background-size:cover;background-position:center;">
       <div class="gp-overlay"><span class="gp-label">Anniversary Keepsake</span></div>
     </div>
-    <div class="gp-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-reunion.jpeg');background-size:cover;background-position:center;">
+    <div class="gp-item" onclick="openLightbox('assets/images/gallery-reunion.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-reunion.jpeg');background-size:cover;background-position:center;">
       <div class="gp-overlay"><span class="gp-label">Family Reunion</span></div>
     </div>
   </div>
