@@ -95,7 +95,7 @@
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>
-<div class="lightbox" id="lightbox"><button class="lightbox-close" onclick="closeLightbox()">×</button><div class="lightbox-img"><p>Image placeholder — add your photos here.</p></div></div>
+<div class="lightbox" id="lightbox"><button class="lightbox-close" onclick="closeLightbox()">×</button><div class="lightbox-img"><img id="lightboxImg" src="" alt="Gallery image" style="max-width:90vw;max-height:85vh;object-fit:contain;display:block;margin:0 auto;border:3px solid rgba(201,168,76,0.4);"></div></div>
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <div class="topbar">Free shipping on orders over $150 &nbsp;·&nbsp; Turnaround: 7–14 days &nbsp;·&nbsp; <a href="tel:+14046834961" style="color:inherit">(404) 683-4961</a></div>
@@ -144,40 +144,40 @@
   </div>
 
   <div class="gallery-masonry fade-in">
-    <div class="gallery-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodies.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-hoodies.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodies.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Apparel</div><div class="gallery-caption">Custom Hoodie Collection</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="decor" style="background-image:url('assets/images/gallery-candles.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-candles.jpeg')" data-cat="decor" style="background-image:url('assets/images/gallery-candles.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Décor</div><div class="gallery-caption">Custom Candle Labels</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="branded" style="background-image:url('assets/images/gallery-corporate.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-corporate.jpeg')" data-cat="branded" style="background-image:url('assets/images/gallery-corporate.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Branded</div><div class="gallery-caption">Corporate Tee Line</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="gifts" style="background-image:url('assets/images/gallery-anniversary.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-anniversary.jpeg')" data-cat="gifts" style="background-image:url('assets/images/gallery-anniversary.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Gifts</div><div class="gallery-caption">Anniversary Keepsake</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="events" style="background-image:url('assets/images/gallery-reunion.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-reunion.jpeg')" data-cat="events" style="background-image:url('assets/images/gallery-reunion.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Events</div><div class="gallery-caption">Family Reunion Shirts</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-calm-cousin.jpeg');background-size:cover;background-position:center top;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-calm-cousin.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-calm-cousin.jpeg');background-size:cover;background-position:center top;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Apparel</div><div class="gallery-caption">Custom Graphic Tees</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-beast-mode.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-beast-mode.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-beast-mode.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Apparel</div><div class="gallery-caption">Beast Mode Performance Tee</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="branded" style="background-image:url('assets/images/gallery-bulk-order.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-bulk-order.jpeg')" data-cat="branded" style="background-image:url('assets/images/gallery-bulk-order.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Branded</div><div class="gallery-caption">Bulk Custom Order</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-baby-beast.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-baby-beast.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-baby-beast.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Apparel</div><div class="gallery-caption">Baby Beast Hoodie</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="events" style="background-image:url('assets/images/gallery-squad.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-squad.jpeg')" data-cat="events" style="background-image:url('assets/images/gallery-squad.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Events</div><div class="gallery-caption">Squad Matching Set</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="gifts" style="background-image:url('assets/images/gallery-mr-mrs.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-mr-mrs.jpeg')" data-cat="gifts" style="background-image:url('assets/images/gallery-mr-mrs.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Gifts</div><div class="gallery-caption">Mr & Mrs Anniversary Tee</div></div></div>
     </div>
-    <div class="gallery-item" onclick="openLightbox()" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodie-spread.jpeg');background-size:cover;background-position:center;">
+    <div class="gallery-item" onclick="openLightbox('assets/images/gallery-hoodie-spread.jpeg')" data-cat="apparel" style="background-image:url('assets/images/gallery-hoodie-spread.jpeg');background-size:cover;background-position:center;">
       <div class="gallery-overlay"><div><div class="gallery-tag">Apparel</div><div class="gallery-caption">Premium Hoodie Spread</div></div></div>
     </div>
   </div>

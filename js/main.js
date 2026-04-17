@@ -66,8 +66,11 @@
   });
 
   // ─── LIGHTBOX ───
-  function openLightbox() {
-    document.getElementById('lightbox').classList.add('open');
+  function openLightbox(imgSrc) {
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    if (img && imgSrc) { img.src = imgSrc; }
+    lb.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeLightbox() {
