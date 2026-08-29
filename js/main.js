@@ -50,26 +50,32 @@
   }
 
   // ─── GALLERY FILTER ───
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  const galleryFilterBtns = document.querySelectorAll('.filter-btn-em');
+  const galleryCount = document.getElementById('galleryCount');
+  function applyGalleryFilter(filter) {
+    let shown = 0;
+    document.querySelectorAll('.gallery-masonry .gallery-item').forEach(item => {
+      const match = filter === 'all' || item.dataset.cat === filter;
+      item.classList.toggle('is-hidden', !match);
+      if (match) shown++;
+    });
+    if (galleryCount) galleryCount.textContent = shown;
+  }
+  galleryFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      galleryFilterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        if (filter === 'all' || item.dataset.cat === filter) {
-          item.style.opacity = '1'; item.style.pointerEvents = 'all';
-        } else {
-          item.style.opacity = '0.25'; item.style.pointerEvents = 'none';
-        }
-      });
+      applyGalleryFilter(btn.dataset.filter);
     });
   });
 
   // ─── LIGHTBOX ───
-  function openLightbox(imgSrc) {
+  function openLightbox(imgSrc, caption) {
     var lb = document.getElementById('lightbox');
     var img = document.getElementById('lightboxImg');
-    if (img && imgSrc) { img.src = imgSrc; }
+    var cap = document.getElementById('lightboxCaption');
+    if (img && imgSrc) { img.src = imgSrc; img.alt = caption || 'Gallery image'; }
+    if (cap) { cap.textContent = caption || ''; cap.style.display = caption ? 'block' : 'none'; }
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -105,7 +111,7 @@
 
   // ─── FORMSPREE ENDPOINT ───
   // 1. Go to https://formspree.io and sign up (free)
-  // 2. Click "New Form", name it "Kreative Contact", set email to bkngalame@gmail.com
+  // 2. Click "New Form", name it "Kreative Contact", set email to contact@kreativeadditions.org
   // 3. Copy your form ID (looks like "xpwzjwkd") and paste it below
   const FORMSPREE_ID = 'xkoplddy';
 
@@ -146,7 +152,7 @@
       }
     })
     .catch(function(err) {
-      showToast('⚠ Could not send. Please call (404) 683-4961 or email bkngalame@gmail.com');
+      showToast('⚠ Could not send. Please call (404) 683-4961 or email contact@kreativeadditions.org');
       console.error('Contact form error:', err);
     })
     .finally(function() {
@@ -189,18 +195,18 @@
     'quote':      'To get a custom quote, scroll up to our "Request a Quote" section and fill out the form — or call us at (404) 683-4961. We respond within 24 hours!',
     'turnaround': 'Standard turnaround is 7–14 business days from proof approval. Rush orders (3–5 business days) are available for an additional fee. Large bulk orders may require extra time — we confirm your timeline upfront.',
     'file':       'We accept PNG, JPG, PDF, AI (Adobe Illustrator), EPS, PSD, and SVG files. For best print quality please provide 300 DPI+ images or vector files (AI, EPS, SVG) for logos. CMYK color mode and transparent backgrounds for logos are preferred.',
-    'bulk':       'We offer great bulk pricing starting at 12+ pieces. For orders over 50 pieces, contact us directly at (404) 683-4961 or bkngalame@gmail.com for a custom wholesale quote.',
+    'bulk':       'We offer great bulk pricing starting at 12+ pieces. For orders over 50 pieces, contact us directly at (404) 683-4961 or contact@kreativeadditions.org for a custom wholesale quote.',
     'services':   'Kreative Additions LLC offers: Custom Apparel (tees, hoodies, jerseys), Home Décor Fabrics (pillows, wall art, table runners), Photo & Image Printing, Branded Merchandise, Event & Team Wear, and Gift & Keepsake Items (totes, scarves, bandanas). Every item is fully customizable!',
     'shipping':   'We ship to all 50 US states via UPS and USPS. Free shipping is included on orders over $150. Expedited and overnight options are available. For international orders please contact us directly.',
-    'contact':    'You can reach us at:<br>📞 (404) 683-4961<br>✉ bkngalame@gmail.com<br>📍 344 Macroom Ct, Loganville, GA 30052<br>⏰ Mon–Fri, 9am–6pm EST',
-    'location':   'We are located at 344 Macroom Ct, Loganville, GA 30052. We serve clients nationwide and ship to all 50 US states.',
-    'hours':      'Our business hours are Monday through Friday, 9am–6pm EST. You can always reach us by email at bkngalame@gmail.com and we will respond within one business day.',
+    'contact':    'You can reach us at:<br>📞 (404) 683-4961<br>✉ contact@kreativeadditions.org<br>📍 600 Lake Vista Ct, Loganville, GA 30052<br>⏰ Mon–Fri, 9am–6pm EST',
+    'location':   'We are located at 600 Lake Vista Ct, Loganville, GA 30052. We serve clients nationwide and ship to all 50 US states.',
+    'hours':      'Our business hours are Monday through Friday, 9am–6pm EST. You can always reach us by email at contact@kreativeadditions.org and we will respond within one business day.',
     'return':     'We stand behind every order. If items are defective or significantly different from the approved proof, we will reprint or refund at no cost. Because all items are custom-made, we cannot accept returns for buyer\'s remorse.',
     'design':     'Yes! Our in-house design team can create or refine artwork for your project. A free design consultation is included with every order. For full custom design work, a separate design fee may apply depending on complexity.',
     'payment':    'We accept Visa, Mastercard, American Express, PayPal, and Apple Pay. All transactions are secured with 256-bit SSL encryption.',
     'minimum':    'There is no minimum order requirement — you can order as little as one piece! Our best pricing kicks in at 12+ units. Contact us for bulk pricing on orders over 50 pieces.',
     'about':      'Kreative Additions LLC is a premium custom fabric printing company based in Loganville, Georgia. With over 7 years in business and 500+ projects completed, we deliver exceptional custom-printed fabrics for apparel, home décor, gifts, and branded merchandise — with a 98% client satisfaction rate.',
-    'default':    'Great question! For detailed help you can call us at (404) 683-4961 or email bkngalame@gmail.com. Our team is available Mon–Fri, 9am–6pm EST and we\'d love to help bring your vision to life!'
+    'default':    'Great question! For detailed help you can call us at (404) 683-4961 or email contact@kreativeadditions.org. Our team is available Mon–Fri, 9am–6pm EST and we\'d love to help bring your vision to life!'
   };
   function getBotReply(msg) {
     msg = msg.toLowerCase();
