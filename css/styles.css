@@ -1123,6 +1123,8 @@
 
   /* ── Tablet portrait & large mobile (≤768px) ── */
   @media (max-width: 768px) {
+    :root { --nav-h: 116px; }
+    .nav-logo-img { height: 96px !important; }
     section { padding: 64px 5vw; }
     .section-inner { padding: 64px 5vw; }
     .nav-links { display: none; }
@@ -1172,7 +1174,8 @@
     .footer-col ul li { font-size: 13px; }
     .chatbot-window { width: calc(100vw - 16px); right: 8px; left: 8px; }
     .quick-btn { font-size: 9px; padding: 5px 8px; }
-    .nav-logo-img { height: 120px; }
+    :root { --nav-h: 92px; }
+    .nav-logo-img { height: 74px !important; }
     .loader-logo { font-size: 24px; }
     .btn-primary, .btn-outline { padding: 13px 20px; font-size: 10px; }
     .back-top { width: 40px; height: 40px; font-size: 14px; }
