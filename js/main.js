@@ -37,10 +37,22 @@
   function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
   // ─── FADE IN OBSERVER ───
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const faders = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
+    faders.forEach(el => observer.observe(el));
+    // Safety net: never leave content hidden if the observer misses
+    setTimeout(() => faders.forEach(el => el.classList.add('visible')), 2500);
+  } else {
+    faders.forEach(el => el.classList.add('visible'));
+  }
 
   // ─── TOAST ───
   function showToast(msg) {

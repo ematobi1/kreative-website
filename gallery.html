@@ -37,10 +37,9 @@
   .filter-btn-em { font-size:10px; letter-spacing:.14em; text-transform:uppercase; padding:8px 18px; background:transparent; border:1px solid rgba(26,74,53,.3); color:var(--em); cursor:pointer; transition:all .2s; font-family:var(--font-body); }
   .filter-btn-em.active,.filter-btn-em:hover { background:var(--em); color:#F5EFE0; border-color:var(--em); }
   .gallery-count { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--em-mid); margin-top:10px; }
-  .gallery-masonry { columns:3; column-gap:14px; }
+  .gallery-masonry { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:start; }
   .gallery-item {
-    -webkit-appearance:none; appearance:none; font:inherit; color:inherit; text-align:left;
-    break-inside:avoid; margin:0 0 14px; padding:0; width:100%;
+    color:inherit; text-align:left; text-decoration:none; margin:0; padding:0;
     display:block; border:none; border-radius:3px;
     position:relative; overflow:hidden; cursor:pointer;
     background:var(--em-dark); box-shadow:0 1px 4px rgba(13,46,31,.14);
@@ -87,7 +86,7 @@
 
   @media(max-width:900px) {
     .ph-inner { grid-template-columns:1fr; }
-    .gallery-masonry { columns:2; }
+    .gallery-masonry { grid-template-columns:repeat(2,1fr); }
     .spotlight-grid { grid-template-columns:1fr; }
     .gallery-section,.spotlight-section { padding:60px 5vw; }
     .ph { padding:80px 5vw 60px; }
@@ -97,11 +96,10 @@
     .btn-em, .btn-em-outline { width:100%; justify-content:center; }
   }
   @media(max-width:600px) {
-    .gallery-masonry { column-gap:10px; }
-    .gallery-item { margin-bottom:10px; }
+    .gallery-masonry { gap:10px; }
   }
   @media(max-width:480px) {
-    .gallery-masonry { columns:1; }
+    .gallery-masonry { grid-template-columns:1fr; }
     .ph-title { font-size:36px; }
     .filter-btn-em { font-size:9px; padding:6px 12px; }
     .spotlight-label h3 { font-size:20px; }
@@ -165,142 +163,142 @@
   <p class="gallery-count"><span id="galleryCount">34</span> pieces shown</p>
 
   <div class="gallery-masonry fade-in">
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-holiday-tees.jpeg','Holiday Graphic Tees')">
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-holiday-tees.jpeg','Holiday Graphic Tees');return false;" href="assets/images/gallery-holiday-tees.jpeg">
       <img src="assets/images/gallery-holiday-tees.jpeg" width="768" height="1024" alt="Two friends in custom-printed holiday graphic tees" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Holiday Graphic Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-otm-bucket-hat.jpeg','OTM Custom Bucket Hat')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-otm-bucket-hat.jpeg','OTM Custom Bucket Hat');return false;" href="assets/images/gallery-otm-bucket-hat.jpeg">
       <img src="assets/images/gallery-otm-bucket-hat.jpeg" width="767" height="1024" alt="Custom OTM printed bucket hat" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">OTM Custom Bucket Hat</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-catering-tablecloth.jpeg','Catering Table Cloth Print')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-catering-tablecloth.jpeg','Catering Table Cloth Print');return false;" href="assets/images/gallery-catering-tablecloth.jpeg">
       <img src="assets/images/gallery-catering-tablecloth.jpeg" width="1024" height="768" alt="Branded catering table cloth with company logo" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Catering Table Cloth Print</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-hoodies.jpeg','Custom Hoodie Collection')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-hoodies.jpeg','Custom Hoodie Collection');return false;" href="assets/images/gallery-hoodies.jpeg">
       <img src="assets/images/gallery-hoodies.jpeg" width="4032" height="3024" alt="Custom Hoodie Collection" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Custom Hoodie Collection</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-baby-onesies.jpeg','Custom Baby Onesies')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-baby-onesies.jpeg','Custom Baby Onesies');return false;" href="assets/images/gallery-baby-onesies.jpeg">
       <img src="assets/images/gallery-baby-onesies.jpeg" width="450" height="360" alt="Twin babies in custom-printed onesies" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Custom Baby Onesies</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="decor" onclick="openLightbox('assets/images/gallery-candles.jpeg','Custom Candle Labels')">
+    </a>
+    <a class="gallery-item" data-cat="decor" onclick="openLightbox('assets/images/gallery-candles.jpeg','Custom Candle Labels');return false;" href="assets/images/gallery-candles.jpeg">
       <img src="assets/images/gallery-candles.jpeg" width="3024" height="4032" alt="Custom Candle Labels" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Décor</span><span class="gallery-caption">Custom Candle Labels</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-church-drawstring-bags.jpeg','Church Back-to-School Bags')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-church-drawstring-bags.jpeg','Church Back-to-School Bags');return false;" href="assets/images/gallery-church-drawstring-bags.jpeg">
       <img src="assets/images/gallery-church-drawstring-bags.jpeg" width="540" height="360" alt="Custom-printed church back-to-school drawstring bags" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Church Back-to-School Bags</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-class-of-2024-tees.jpeg','Class of 2024 Photo Tees')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-class-of-2024-tees.jpeg','Class of 2024 Photo Tees');return false;" href="assets/images/gallery-class-of-2024-tees.jpeg">
       <img src="assets/images/gallery-class-of-2024-tees.jpeg" width="311" height="553" alt="Family in Class of 2024 custom photo tees at a stadium" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Class of 2024 Photo Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-corporate.jpeg','Corporate Tee Line')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-corporate.jpeg','Corporate Tee Line');return false;" href="assets/images/gallery-corporate.jpeg">
       <img src="assets/images/gallery-corporate.jpeg" width="4032" height="3024" alt="Corporate Tee Line" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Corporate Tee Line</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-s10-hoodie.jpeg','S10 Truck Enthusiast Hoodie')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-s10-hoodie.jpeg','S10 Truck Enthusiast Hoodie');return false;" href="assets/images/gallery-s10-hoodie.jpeg">
       <img src="assets/images/gallery-s10-hoodie.jpeg" width="360" height="480" alt="Man wearing a custom S10 truck graphic hoodie" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">S10 Truck Enthusiast Hoodie</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-anniversary.jpeg','Anniversary Keepsake')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-anniversary.jpeg','Anniversary Keepsake');return false;" href="assets/images/gallery-anniversary.jpeg">
       <img src="assets/images/gallery-anniversary.jpeg" width="4032" height="3024" alt="Anniversary Keepsake" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Anniversary Keepsake</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-family-cruise-tees.jpeg','Family Cruise Matching Tees')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-family-cruise-tees.jpeg','Family Cruise Matching Tees');return false;" href="assets/images/gallery-family-cruise-tees.jpeg">
       <img src="assets/images/gallery-family-cruise-tees.jpeg" width="394" height="360" alt="Family wearing matching custom cruise tees" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Family Cruise Matching Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-but-god-tee.jpeg','But God Statement Tee')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-but-god-tee.jpeg','But God Statement Tee');return false;" href="assets/images/gallery-but-god-tee.jpeg">
       <img src="assets/images/gallery-but-god-tee.jpeg" width="768" height="1024" alt="Woman wearing a custom But God statement tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">But God Statement Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-reunion.jpeg','Family Reunion Shirts')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-reunion.jpeg','Family Reunion Shirts');return false;" href="assets/images/gallery-reunion.jpeg">
       <img src="assets/images/gallery-reunion.jpeg" width="4032" height="3024" alt="Family Reunion Shirts" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Family Reunion Shirts</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-name-door-hanger.jpeg','Personalized Name Door Sign')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-name-door-hanger.jpeg','Personalized Name Door Sign');return false;" href="assets/images/gallery-name-door-hanger.jpeg">
       <img src="assets/images/gallery-name-door-hanger.jpeg" width="360" height="480" alt="Personalized name door hanger sign" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Personalized Name Door Sign</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-calm-cousin.jpeg','Custom Graphic Tees')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-calm-cousin.jpeg','Custom Graphic Tees');return false;" href="assets/images/gallery-calm-cousin.jpeg">
       <img src="assets/images/gallery-calm-cousin.jpeg" width="3270" height="2835" alt="Custom Graphic Tees" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Custom Graphic Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-bridesmaid-tumblers.jpeg','Bridal Party Tumbler Set')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-bridesmaid-tumblers.jpeg','Bridal Party Tumbler Set');return false;" href="assets/images/gallery-bridesmaid-tumblers.jpeg">
       <img src="assets/images/gallery-bridesmaid-tumblers.jpeg" width="540" height="360" alt="Set of personalized bridal party tumblers" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Bridal Party Tumbler Set</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-beast-mode.jpeg','Beast Mode Performance Tee')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-beast-mode.jpeg','Beast Mode Performance Tee');return false;" href="assets/images/gallery-beast-mode.jpeg">
       <img src="assets/images/gallery-beast-mode.jpeg" width="5712" height="4284" alt="Beast Mode Performance Tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Beast Mode Performance Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-adopt-a-road-tees.jpeg','Adopt-A-Road Volunteer Tees')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-adopt-a-road-tees.jpeg','Adopt-A-Road Volunteer Tees');return false;" href="assets/images/gallery-adopt-a-road-tees.jpeg">
       <img src="assets/images/gallery-adopt-a-road-tees.jpeg" width="974" height="804" alt="Neon safety tees printed for an Adopt-A-Road volunteer group" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Adopt-A-Road Volunteer Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-faith-tumbler.jpeg','Faith Insulated Tumbler')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-faith-tumbler.jpeg','Faith Insulated Tumbler');return false;" href="assets/images/gallery-faith-tumbler.jpeg">
       <img src="assets/images/gallery-faith-tumbler.jpeg" width="360" height="540" alt="Custom faith-themed insulated tumbler" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Faith Insulated Tumbler</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-bulk-order.jpeg','Bulk Custom Order')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-bulk-order.jpeg','Bulk Custom Order');return false;" href="assets/images/gallery-bulk-order.jpeg">
       <img src="assets/images/gallery-bulk-order.jpeg" width="2891" height="2856" alt="Bulk Custom Order" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Bulk Custom Order</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-school-spirit-jaguars.jpeg','School Spirit Jaguars Tees')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-school-spirit-jaguars.jpeg','School Spirit Jaguars Tees');return false;" href="assets/images/gallery-school-spirit-jaguars.jpeg">
       <img src="assets/images/gallery-school-spirit-jaguars.jpeg" width="360" height="450" alt="Teacher and student in custom Jaguars school spirit tees" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">School Spirit Jaguars Tees</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-autism-awareness-tee.jpeg','Autism Awareness Youth Tee')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-autism-awareness-tee.jpeg','Autism Awareness Youth Tee');return false;" href="assets/images/gallery-autism-awareness-tee.jpeg">
       <img src="assets/images/gallery-autism-awareness-tee.jpeg" width="768" height="1024" alt="Youth tee printed with an autism awareness design" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Autism Awareness Youth Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-baby-beast.jpeg','Baby Beast Hoodie')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-baby-beast.jpeg','Baby Beast Hoodie');return false;" href="assets/images/gallery-baby-beast.jpeg">
       <img src="assets/images/gallery-baby-beast.jpeg" width="5712" height="4284" alt="Baby Beast Hoodie" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Baby Beast Hoodie</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-first-birthday-unicorn.jpeg','First Birthday Unicorn Tee')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-first-birthday-unicorn.jpeg','First Birthday Unicorn Tee');return false;" href="assets/images/gallery-first-birthday-unicorn.jpeg">
       <img src="assets/images/gallery-first-birthday-unicorn.jpeg" width="769" height="1024" alt="Custom unicorn first birthday tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">First Birthday Unicorn Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-squad.jpeg','Squad Matching Set')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-squad.jpeg','Squad Matching Set');return false;" href="assets/images/gallery-squad.jpeg">
       <img src="assets/images/gallery-squad.jpeg" width="3812" height="2058" alt="Squad Matching Set" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Squad Matching Set</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-bartender-table-cover.jpeg','Bartender Stretch Table Cover')">
+    </a>
+    <a class="gallery-item" data-cat="branded" onclick="openLightbox('assets/images/gallery-bartender-table-cover.jpeg','Bartender Stretch Table Cover');return false;" href="assets/images/gallery-bartender-table-cover.jpeg">
       <img src="assets/images/gallery-bartender-table-cover.jpeg" width="868" height="906" alt="Branded stretch table cover for a mobile bartending business" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Branded</span><span class="gallery-caption">Bartender Stretch Table Cover</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-birthday-girl-tee.jpeg','Birthday Girl Tee')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-birthday-girl-tee.jpeg','Birthday Girl Tee');return false;" href="assets/images/gallery-birthday-girl-tee.jpeg">
       <img src="assets/images/gallery-birthday-girl-tee.jpeg" width="359" height="754" alt="Young girl in a custom princess birthday tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Birthday Girl Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-mr-mrs.jpeg','Mr and Mrs Anniversary Tee')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-mr-mrs.jpeg','Mr and Mrs Anniversary Tee');return false;" href="assets/images/gallery-mr-mrs.jpeg">
       <img src="assets/images/gallery-mr-mrs.jpeg" width="4032" height="3024" alt="Mr and Mrs Anniversary Tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Mr &amp; Mrs Anniversary Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-twins-birthday.jpeg','Twins Birthday Outfits')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-twins-birthday.jpeg','Twins Birthday Outfits');return false;" href="assets/images/gallery-twins-birthday.jpeg">
       <img src="assets/images/gallery-twins-birthday.jpeg" width="768" height="1024" alt="Twin toddlers in matching custom birthday outfits" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">Twins Birthday Outfits</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-personalized-apron.jpeg','Personalized Kitchen Apron')">
+    </a>
+    <a class="gallery-item" data-cat="gifts" onclick="openLightbox('assets/images/gallery-personalized-apron.jpeg','Personalized Kitchen Apron');return false;" href="assets/images/gallery-personalized-apron.jpeg">
       <img src="assets/images/gallery-personalized-apron.jpeg" width="360" height="450" alt="Personalized name kitchen apron" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Gifts</span><span class="gallery-caption">Personalized Kitchen Apron</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-hoodie-spread.jpeg','Premium Hoodie Spread')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-hoodie-spread.jpeg','Premium Hoodie Spread');return false;" href="assets/images/gallery-hoodie-spread.jpeg">
       <img src="assets/images/gallery-hoodie-spread.jpeg" width="2697" height="2411" alt="Premium Hoodie Spread" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Premium Hoodie Spread</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-5th-grade-tee.jpeg','5th Grade Graduation Tee')">
+    </a>
+    <a class="gallery-item" data-cat="events" onclick="openLightbox('assets/images/gallery-5th-grade-tee.jpeg','5th Grade Graduation Tee');return false;" href="assets/images/gallery-5th-grade-tee.jpeg">
       <img src="assets/images/gallery-5th-grade-tee.jpeg" width="360" height="480" alt="Boy wearing a custom 5th grade graduation tee" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Events</span><span class="gallery-caption">5th Grade Graduation Tee</span></span></span>
-    </button>
-    <button type="button" class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-beast-mode-shirt.jpeg','Beast Mode Activated Shirt')">
+    </a>
+    <a class="gallery-item" data-cat="apparel" onclick="openLightbox('assets/images/gallery-beast-mode-shirt.jpeg','Beast Mode Activated Shirt');return false;" href="assets/images/gallery-beast-mode-shirt.jpeg">
       <img src="assets/images/gallery-beast-mode-shirt.jpeg" width="360" height="480" alt="Beast Mode Activated custom printed performance shirt" loading="lazy" decoding="async">
       <span class="gallery-overlay"><span><span class="gallery-tag">Apparel</span><span class="gallery-caption">Beast Mode Activated Shirt</span></span></span>
-    </button>
+    </a>
   </div>
 
   <div class="gallery-cta">
