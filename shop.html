@@ -46,7 +46,10 @@
   .product-card-b { background:#fff; border:1px solid rgba(107,26,53,.1); overflow:hidden; transition:all .3s; }
   .product-card-b:hover { border-color:var(--burg); box-shadow:0 8px 32px rgba(107,26,53,.12); transform:translateY(-2px); }
   .product-image-b { background:var(--burg-dark); aspect-ratio:1; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-  .product-badge-b { position:absolute; top:12px; left:12px; font-size:9px; letter-spacing:.14em; text-transform:uppercase; padding:5px 12px; font-weight:600; }
+  .product-image-b img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+  .product-card-b:hover .product-image-b img { transform:scale(1.04); }
+  .product-badge-b { position:absolute; top:12px; left:12px; z-index:1; font-size:9px; letter-spacing:.14em; text-transform:uppercase; padding:5px 12px; font-weight:600; }
+  @media (prefers-reduced-motion: reduce) { .product-image-b img, .product-card-b:hover .product-image-b img { transition:none; transform:none; } }
   .badge-seller-b { background:var(--rosegold); color:var(--burg-dark); }
   .badge-new-b { background:var(--burg); color:var(--rosegold-light); border:1px solid rgba(196,154,126,.3); }
   .product-info-b { padding:24px 24px 28px; }
@@ -154,15 +157,15 @@
     <div>
       <div class="products-grid fade-in">
         <div class="product-card-b">
-          <div class="product-image-b"><div class="product-badge-b badge-seller-b">Best Seller</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-image-b"><img src="assets/images/shop-custom-tee.jpeg" width="768" height="1024" alt="Custom printed tee with a full-colour front graphic" loading="lazy" decoding="async"><div class="product-badge-b badge-seller-b">Best Seller</div></div>
           <div class="product-info-b"><div class="product-cat-b">Apparel</div><div class="product-name-b">Custom Printed Tee</div><p class="product-desc-b">100% premium cotton, all-over print. Sizes XS–5XL. Minimum: 1 piece.</p><div class="product-footer-b"><div class="product-price-b">$28<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Custom Printed Tee',28)">Add to Cart</button></div></div>
         </div>
         <div class="product-card-b">
-          <div class="product-image-b"><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
-          <div class="product-info-b"><div class="product-cat-b">Gifts</div><div class="product-name-b">Custom Canvas Tote</div><p class="product-desc-b">Heavy-duty 12oz canvas. Full front print, natural or black base.</p><div class="product-footer-b"><div class="product-price-b">$18<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Custom Canvas Tote',18)">Add to Cart</button></div></div>
+          <div class="product-image-b"><img src="assets/images/shop-drawstring-bag.jpeg" width="540" height="360" alt="Custom-printed drawstring bags in three colours" loading="lazy" decoding="async"></div>
+          <div class="product-info-b"><div class="product-cat-b">Gifts</div><div class="product-name-b">Custom Drawstring Bag</div><p class="product-desc-b">Durable poly-cotton cinch bag. Full front print, multiple base colours.</p><div class="product-footer-b"><div class="product-price-b">$18<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Custom Drawstring Bag',18)">Add to Cart</button></div></div>
         </div>
         <div class="product-card-b">
-          <div class="product-image-b"><div class="product-badge-b badge-seller-b">Popular</div><div style="color:rgba(196,154,126,.25);font-size:11px;letter-spacing:.1em;text-transform:uppercase;">Upload image</div></div>
+          <div class="product-image-b"><img src="assets/images/shop-branded-hoodie.jpeg" width="1600" height="1430" alt="Custom-printed pullover hoodies laid flat" loading="lazy" decoding="async"><div class="product-badge-b badge-seller-b">Popular</div></div>
           <div class="product-info-b"><div class="product-cat-b">Branded</div><div class="product-name-b">Branded Hoodie</div><p class="product-desc-b">Soft-fleece pullover with custom front or back print. Teams & events.</p><div class="product-footer-b"><div class="product-price-b">$55<small>/ea</small></div><button class="btn-add-b" onclick="addToCart('Branded Hoodie',55)">Add to Cart</button></div></div>
         </div>
       </div>
