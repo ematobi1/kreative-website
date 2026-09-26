@@ -14,7 +14,7 @@
   /* ── FOREST GREEN / COPPER THEME ── */
   :root { --forest:#1A3825; --forest-dark:#0A1E10; --forest-mid:#265C38; --copper:#B5663A; --copper-light:#F5EDE5; --leaf:#3D7A50; }
 
-  .ph { background:linear-gradient(135deg,var(--forest-dark) 0%,var(--forest) 55%,var(--forest-mid) 100%); padding:120px 8vw 100px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--forest-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--forest) var(--section-opacity), transparent) 55%,color-mix(in srgb, var(--forest-mid) var(--section-opacity), transparent) 100%); padding:120px 8vw 100px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 C60 20 60 60 40 80 C20 60 20 20 40 0Z' fill='none' stroke='rgba(181,102,58,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--copper); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
@@ -32,7 +32,7 @@
   .fa-excerpt { font-size:13px; font-weight:300; color:rgba(245,237,229,.6); line-height:1.75; margin-bottom:20px; }
   .fa-meta { font-size:11px; color:rgba(245,237,229,.4); letter-spacing:.06em; }
 
-  .blog-section { padding:100px 8vw; background:var(--copper-light); }
+  .blog-section { padding:100px 8vw; background:color-mix(in srgb, var(--copper-light) var(--section-opacity), transparent); }
   .blog-section .section-title em { color:var(--copper); }
   .blog-layout { display:grid; grid-template-columns:1fr 320px; gap:60px; margin-top:56px; align-items:start; }
   .blog-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
@@ -62,7 +62,7 @@
   .tag { font-size:10px; letter-spacing:.1em; text-transform:uppercase; padding:5px 12px; border:1px solid rgba(181,102,58,.3); color:var(--copper); cursor:pointer; transition:all .2s; }
   .tag:hover { background:var(--copper); color:#F5EFE0; }
 
-  .newsletter-forest { padding:80px 8vw; background:var(--forest); }
+  .newsletter-forest { padding:80px 8vw; background:color-mix(in srgb, var(--forest) var(--section-opacity), transparent); }
   .newsletter-forest .email-bar-inner { max-width:800px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:40px; flex-wrap:wrap; }
   .newsletter-forest h3 { font-family:var(--font-display); font-size:32px; font-weight:300; color:#F5EFE0; }
   .newsletter-forest h3 em { font-style:italic; color:var(--copper); }
@@ -105,6 +105,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>

@@ -14,7 +14,7 @@
   /* ── BURGUNDY / ROSE GOLD THEME ── */
   :root { --burg:#6B1A35; --burg-dark:#3D0A1C; --burg-mid:#8A2545; --rosegold:#C49A7E; --rosegold-light:#F2E5DB; }
 
-  .ph { background:linear-gradient(135deg,var(--burg-dark) 0%,var(--burg) 55%,var(--burg-mid) 100%); padding:100px 8vw 80px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--burg-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--burg) var(--section-opacity), transparent) 55%,color-mix(in srgb, var(--burg-mid) var(--section-opacity), transparent) 100%); padding:100px 8vw 80px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='40' height='40' fill='none' stroke='rgba(196,154,126,0.06)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:40px; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--rosegold); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
@@ -30,7 +30,7 @@
   .ph-promo-label { font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--rosegold); margin-bottom:6px; }
   .ph-promo p { font-size:14px; font-weight:300; color:#F5EFE0; line-height:1.6; }
 
-  .categories-section { padding:80px 8vw; background:var(--rosegold-light); }
+  .categories-section { padding:80px 8vw; background:color-mix(in srgb, var(--rosegold-light) var(--section-opacity), transparent); }
   .cat-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:3px; margin-top:48px; }
   .cat-tile { background:var(--burg); padding:40px 20px; text-align:center; cursor:pointer; transition:all .3s; position:relative; overflow:hidden; }
   .cat-tile::after { content:''; position:absolute; inset:0; background:var(--rosegold); transform:scaleY(0); transform-origin:bottom; transition:transform .3s; z-index:0; }
@@ -40,7 +40,7 @@
   .cat-name { font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#F5EFE0; font-weight:400; transition:color .3s; }
   .cat-tile:hover .cat-name { color:var(--burg-dark); }
 
-  .shop-section { padding:80px 8vw 100px; background:#FFF8F5; }
+  .shop-section { padding:80px 8vw 100px; background:color-mix(in srgb, #FFF8F5 var(--section-opacity), transparent); }
   .shop-layout { display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; }
   .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   .product-card-b { background:#fff; border:1px solid rgba(107,26,53,.1); overflow:hidden; transition:all .3s; }
@@ -71,7 +71,7 @@
   .cart-total-price { font-family:var(--font-display); font-size:28px; font-weight:300; color:var(--rosegold); }
   .cart-empty { font-size:13px; font-weight:300; color:rgba(242,229,219,.4); text-align:center; padding:32px 0; }
 
-  .checkout-strip { background:var(--burg); padding:60px 8vw; }
+  .checkout-strip { background:color-mix(in srgb, var(--burg) var(--section-opacity), transparent); padding:60px 8vw; }
   .checkout-strip .section-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
   .checkout-strip h3 { font-family:var(--font-display); font-size:28px; font-weight:300; color:#F5EFE0; }
   .checkout-strip h3 em { font-style:italic; color:var(--rosegold); }
@@ -103,6 +103,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>

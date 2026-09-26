@@ -14,7 +14,7 @@
   /* ── ESPRESSO / BRONZE THEME ── */
   :root { --esp:#2C1810; --esp-dark:#150A06; --esp-mid:#4A2A1A; --bronze:#C47A35; --bronze-light:#F5EDE0; --bronze-pale:#FAF4EC; }
 
-  .ph { background:linear-gradient(135deg,var(--esp-dark) 0%,var(--esp) 60%,var(--esp-mid) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--esp-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--esp) var(--section-opacity), transparent) 60%,color-mix(in srgb, var(--esp-mid) var(--section-opacity), transparent) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='1' fill='rgba(196,122,53,0.12)'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; text-align:center; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--bronze); margin-bottom:24px; display:flex; align-items:center; justify-content:center; gap:16px; }
@@ -30,7 +30,7 @@
   .ph-card-value a { color:inherit; text-decoration:none; }
   .ph-card-value a:hover { color:var(--bronze); }
 
-  .contact-main { padding:100px 8vw; background:var(--bronze-pale); }
+  .contact-main { padding:100px 8vw; background:color-mix(in srgb, var(--bronze-pale) var(--section-opacity), transparent); }
   .contact-grid { display:grid; grid-template-columns:1fr 400px; gap:64px; align-items:start; }
   .contact-form-box { background:#fff; padding:52px 48px; border:1px solid rgba(196,122,53,.12); }
   .contact-form-box h2 { font-family:var(--font-display); font-size:36px; font-weight:300; color:var(--esp-dark); margin-bottom:8px; }
@@ -58,12 +58,12 @@
   .hours-day { font-size:12px; font-weight:400; color:var(--esp-dark); }
   .hours-time { font-size:12px; font-weight:300; color:var(--warm-gray); }
 
-  .map-section { padding:0 8vw 100px; background:var(--bronze-pale); }
+  .map-section { padding:0 8vw 100px; background:color-mix(in srgb, var(--bronze-pale) var(--section-opacity), transparent); }
   .map-placeholder { background:var(--esp); height:320px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; }
   .map-placeholder p { font-size:13px; font-weight:300; color:rgba(245,237,224,.5); letter-spacing:.08em; }
   .map-address { font-family:var(--font-display); font-size:22px; font-weight:300; color:var(--bronze); }
 
-  .file-upload-section { padding:80px 8vw; background:var(--bronze-light); }
+  .file-upload-section { padding:80px 8vw; background:color-mix(in srgb, var(--bronze-light) var(--section-opacity), transparent); }
   .file-upload-inner { max-width:700px; margin:0 auto; }
   .file-upload-inner .section-title em { color:var(--bronze); }
   .file-upload-inner p { font-size:15px; font-weight:300; color:var(--warm-gray); line-height:1.85; margin-bottom:36px; text-align:center; }
@@ -72,7 +72,7 @@
   .form-file-area-b p { font-size:14px; font-weight:300; color:var(--warm-gray); margin:0; margin-top:12px; }
   .file-preview-list-b { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
 
-  .faq-contact { padding:100px 8vw; background:#fff; }
+  .faq-contact { padding:100px 8vw; background:color-mix(in srgb, #fff var(--section-opacity), transparent); }
   .faq-contact .section-title em { color:var(--bronze); }
   .faq-grid-c { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:56px; max-width:1000px; margin-left:auto; margin-right:auto; }
   .faq-item-c { border-bottom:1px solid rgba(196,122,53,.12); border-right:1px solid rgba(196,122,53,.08); padding:0; }
@@ -119,6 +119,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>

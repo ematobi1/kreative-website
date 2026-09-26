@@ -14,7 +14,7 @@
   /* ── NAVY / CHAMPAGNE THEME ── */
   :root { --navy:#1B2F5C; --navy-dark:#0D1A35; --champagne:#D4B896; --champagne-light:#F0E6D8; --navy-mid:#253F78; }
 
-  .ph { background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 60%,var(--navy-mid) 100%); padding:120px 8vw 100px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--navy-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--navy) var(--section-opacity), transparent) 60%,color-mix(in srgb, var(--navy-mid) var(--section-opacity), transparent) 100%); padding:120px 8vw 100px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(212,184,150,0.06)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--champagne); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
@@ -28,7 +28,7 @@
   .btn-navy-outline { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#F5EFE0; font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:.16em; text-transform:uppercase; padding:14px 32px; border:1px solid rgba(240,230,216,.4); cursor:pointer; transition:all .25s; text-decoration:none; }
   .btn-navy-outline:hover { border-color:var(--champagne); color:var(--champagne); }
 
-  .svc-section { padding:100px 8vw; background:var(--champagne-light); }
+  .svc-section { padding:100px 8vw; background:color-mix(in srgb, var(--champagne-light) var(--section-opacity), transparent); }
   .svc-section .section-title em { color:var(--navy); }
   .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:64px; }
   .svc-card { background:#fff; padding:52px 40px; position:relative; border-bottom:3px solid transparent; transition:all .3s; }
@@ -43,7 +43,7 @@
   .svc-features li::before { content:''; width:6px; height:6px; background:var(--champagne); flex-shrink:0; }
   .svc-link { font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--navy); font-weight:500; display:flex; align-items:center; gap:8px; }
 
-  .pricing-section { padding:100px 8vw; background:var(--navy-dark); }
+  .pricing-section { padding:100px 8vw; background:color-mix(in srgb, var(--navy-dark) var(--section-opacity), transparent); }
   .pricing-section .section-label { color:var(--champagne); }
   .pricing-section .section-label::before { background:var(--champagne); }
   .pricing-section .section-title { color:#F5EFE0; }
@@ -59,14 +59,14 @@
   .pricing-list li { font-size:13px; font-weight:300; color:rgba(240,230,216,.8); padding:9px 0; border-bottom:1px solid rgba(212,184,150,.1); display:flex; align-items:center; gap:10px; }
   .pricing-list li::before { content:'✓'; color:var(--champagne); font-size:11px; }
 
-  .why-section { padding:100px 8vw; background:var(--champagne-light); }
+  .why-section { padding:100px 8vw; background:color-mix(in srgb, var(--champagne-light) var(--section-opacity), transparent); }
   .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:64px; }
   .why-card { text-align:center; padding:40px 20px; }
   .why-icon { font-size:36px; margin-bottom:20px; }
   .why-title { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--navy-dark); margin-bottom:12px; }
   .why-desc { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.8; }
 
-  .svc-cta { background:var(--navy); padding:80px 8vw; text-align:center; }
+  .svc-cta { background:color-mix(in srgb, var(--navy) var(--section-opacity), transparent); padding:80px 8vw; text-align:center; }
   .svc-cta h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); font-weight:300; color:#F5EFE0; margin-bottom:16px; }
   .svc-cta h2 em { font-style:italic; color:var(--champagne); }
   .svc-cta p { font-size:15px; font-weight:300; color:rgba(240,230,216,.7); max-width:500px; margin:0 auto 40px; line-height:1.8; }
@@ -94,6 +94,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>

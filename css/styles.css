@@ -18,6 +18,7 @@
     --nav-h: 220px;
     --radius: 2px;
     --radius-lg: 6px;
+    --section-opacity: 85%;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,6 +31,15 @@
     color: var(--charcoal);
     line-height: 1.7;
     overflow-x: hidden;
+  }
+
+  /* ─── BACKGROUND VIDEO ─── */
+  .bg-video {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
   }
 
   /* ─── TOUCH TARGETS ─── */
@@ -163,7 +173,7 @@
   /* ─── HERO ─── */
   .hero {
     min-height: calc(100vh - var(--nav-h) - 38px);
-    background: var(--cream);
+    background: color-mix(in srgb, var(--cream) var(--section-opacity), transparent);
     display: grid; grid-template-columns: 1fr 1fr;
     align-items: center;
     overflow: hidden;
@@ -173,7 +183,7 @@
     content: '';
     position: absolute; top: 0; right: 0;
     width: 50%; height: 100%;
-    background: var(--charcoal);
+    background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent);
     z-index: 0;
   }
   .hero-left {
@@ -310,7 +320,7 @@
 
   /* ─── MARQUEE ─── */
   .marquee-wrap {
-    background: var(--charcoal);
+    background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent);
     padding: 18px 0; overflow: hidden;
     white-space: nowrap;
   }
@@ -635,7 +645,7 @@
   .secure-note svg { flex-shrink: 0; }
 
   /* ─── TESTIMONIALS ─── */
-  .testimonials { background: var(--charcoal); }
+  .testimonials { background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent); }
   .testimonials .section-title { color: var(--cream); }
   .testimonials .section-label { color: var(--gold); }
   .testimonials .section-label::before { background: var(--gold); }
@@ -786,7 +796,7 @@
 
   /* ─── EMAIL SUBSCRIPTION ─── */
   .email-bar {
-    background: var(--charcoal);
+    background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent);
     padding: 60px 5vw;
     border-top: 1px solid rgba(201,168,76,0.2);
   }
@@ -886,7 +896,7 @@
 
   /* ─── FOOTER ─── */
   footer {
-    background: var(--charcoal);
+    background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent);
     border-top: 1px solid rgba(201,168,76,0.15);
   }
   .footer-main {
@@ -1018,7 +1028,7 @@
     .hero { grid-template-columns: 1fr; }
     .hero::before { display: none; }
     .hero-left { padding: 60px 5vw 40px; }
-    .hero-right { background: var(--charcoal); padding: 40px 5vw 60px; }
+    .hero-right { background: color-mix(in srgb, var(--charcoal) var(--section-opacity), transparent); padding: 40px 5vw 60px; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .reviews-grid { grid-template-columns: 1fr 1fr; }
     .checkout-grid { grid-template-columns: 1fr; }

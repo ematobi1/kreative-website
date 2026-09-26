@@ -5,6 +5,18 @@
     }, 1400);
   });
 
+  // ─── BACKGROUND VIDEO ───
+  const bgVideo = document.querySelector('.bg-video');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function syncBgVideo() {
+    if (reducedMotion.matches) bgVideo.pause();
+    else bgVideo.play().catch(() => {});
+  }
+  if (bgVideo) {
+    syncBgVideo();
+    reducedMotion.addEventListener('change', syncBgVideo);
+  }
+
   // ─── CUSTOM CURSOR ───
   const cursor = document.getElementById('cursor');
   const cursorDot = document.getElementById('cursorDot');

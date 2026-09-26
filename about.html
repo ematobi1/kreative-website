@@ -14,7 +14,7 @@
   /* ── DEEP PLUM / GOLD THEME ── */
   :root { --plum:#3C1A5C; --plum-dark:#1A0A2E; --plum-mid:#52268A; --plum-light:#F3EFF8; }
 
-  .ph { background:linear-gradient(135deg,var(--plum-dark) 0%,var(--plum) 60%,var(--plum-mid) 100%); padding:130px 8vw 110px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--plum-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--plum) var(--section-opacity), transparent) 60%,color-mix(in srgb, var(--plum-mid) var(--section-opacity), transparent) 100%); padding:130px 8vw 110px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='50' rx='40' ry='40' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; text-align:center; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:24px; display:flex; align-items:center; justify-content:center; gap:16px; }
@@ -25,7 +25,7 @@
   .btn-plum { display:inline-flex; align-items:center; gap:8px; background:var(--gold); color:var(--charcoal); font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:15px 32px; border:none; cursor:pointer; transition:all .25s; text-decoration:none; }
   .btn-plum:hover { background:var(--gold-light); }
 
-  .story-section { padding:100px 8vw; background:#fff; }
+  .story-section { padding:100px 8vw; background:color-mix(in srgb, #fff var(--section-opacity), transparent); }
   .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
   .story-text .section-label { margin-bottom:20px; }
   .story-title { font-family:var(--font-display); font-size:clamp(34px,4vw,54px); font-weight:300; color:var(--plum-dark); line-height:1.2; margin-bottom:28px; }
@@ -38,7 +38,7 @@
   .story-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
   .story-img-badge { background:var(--gold); color:var(--charcoal); padding:12px 24px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; position:relative; z-index:1; }
 
-  .values-section { padding:100px 8vw; background:var(--plum-light); }
+  .values-section { padding:100px 8vw; background:color-mix(in srgb, var(--plum-light) var(--section-opacity), transparent); }
   .values-section .section-title em { color:var(--plum); }
   .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:64px; }
   .value-card { background:#fff; padding:52px 40px; border-top:4px solid transparent; transition:border-color .3s; }
@@ -47,13 +47,13 @@
   .value-title { font-family:var(--font-display); font-size:26px; font-weight:400; color:var(--plum-dark); margin-bottom:14px; }
   .value-desc { font-size:14px; font-weight:300; color:var(--warm-gray); line-height:1.85; }
 
-  .stats-plum { display:grid; grid-template-columns:repeat(4,1fr); background:var(--plum-dark); }
+  .stats-plum { display:grid; grid-template-columns:repeat(4,1fr); background:color-mix(in srgb, var(--plum-dark) var(--section-opacity), transparent); }
   .stat-b { padding:52px 24px; text-align:center; border-right:1px solid rgba(201,168,76,.1); }
   .stat-b:last-child { border-right:none; }
   .stat-b-num { font-family:var(--font-display); font-size:56px; font-weight:300; color:var(--gold); line-height:1; }
   .stat-b-label { font-size:10px; font-weight:400; letter-spacing:.18em; text-transform:uppercase; color:rgba(243,239,248,.5); margin-top:8px; }
 
-  .timeline-section { padding:100px 8vw; background:#fff; }
+  .timeline-section { padding:100px 8vw; background:color-mix(in srgb, #fff var(--section-opacity), transparent); }
   .timeline-section .section-title em { color:var(--plum); }
   .timeline { margin-top:64px; position:relative; }
   .timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:1px; background:rgba(60,26,92,.15); }
@@ -69,7 +69,7 @@
   .tl-event { font-family:var(--font-display); font-size:20px; font-weight:400; color:var(--plum-dark); margin-bottom:8px; }
   .tl-desc { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.75; }
 
-  .team-section { padding:100px 8vw; background:var(--plum-light); }
+  .team-section { padding:100px 8vw; background:color-mix(in srgb, var(--plum-light) var(--section-opacity), transparent); }
   .team-section .section-title em { color:var(--plum); }
   .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:64px; }
   .team-card { text-align:center; }
@@ -79,7 +79,7 @@
   .team-role { font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--plum); }
   .team-bio { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.7; margin-top:12px; }
 
-  .about-cta { background:var(--plum); padding:80px 8vw; text-align:center; }
+  .about-cta { background:color-mix(in srgb, var(--plum) var(--section-opacity), transparent); padding:80px 8vw; text-align:center; }
   .about-cta h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); font-weight:300; color:#F5EFE0; margin-bottom:16px; }
   .about-cta h2 em { font-style:italic; color:var(--gold); }
   .about-cta p { font-size:15px; font-weight:300; color:rgba(243,239,248,.65); max-width:480px; margin:0 auto 40px; line-height:1.8; }
@@ -114,6 +114,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>

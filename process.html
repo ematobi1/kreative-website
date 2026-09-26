@@ -14,7 +14,7 @@
   /* ── MIDNIGHT BLUE / SILVER THEME ── */
   :root { --mid:#0D1F35; --mid-dark:#050F1A; --mid-light:#1A3A5C; --silver:#B8C4CF; --silver-light:#E8EDF2; --nav-h:220px; }
 
-  .ph { background:linear-gradient(135deg,var(--mid-dark) 0%,var(--mid) 60%,var(--mid-light) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
+  .ph { background:linear-gradient(135deg,color-mix(in srgb, var(--mid-dark) var(--section-opacity), transparent) 0%,color-mix(in srgb, var(--mid) var(--section-opacity), transparent) 60%,color-mix(in srgb, var(--mid-light) var(--section-opacity), transparent) 100%); padding:130px 8vw 100px; position:relative; overflow:hidden; }
   .ph::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='30' x2='60' y2='30' stroke='rgba(184,196,207,0.05)' stroke-width='1'/%3E%3Cline x1='30' y1='0' x2='30' y2='60' stroke='rgba(184,196,207,0.05)' stroke-width='1'/%3E%3C/svg%3E") repeat; }
   .ph-inner { max-width:1280px; margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
   .ph-eyebrow { font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--silver); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
@@ -33,7 +33,7 @@
   .ph-step-text h4 { font-size:13px; font-weight:400; color:var(--silver); letter-spacing:.08em; margin-bottom:2px; }
   .ph-step-text p { font-size:12px; font-weight:300; color:rgba(232,237,242,.45); }
 
-  .process-section { padding:100px 8vw; background:var(--silver-light); }
+  .process-section { padding:100px 8vw; background:color-mix(in srgb, var(--silver-light) var(--section-opacity), transparent); }
   .process-section .section-title em { color:var(--mid); }
   .process-big-steps { display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-top:64px; }
   .big-step { background:#fff; padding:60px 48px; position:relative; overflow:hidden; transition:box-shadow .3s; }
@@ -48,7 +48,7 @@
   .big-step-detail li { font-size:13px; font-weight:300; color:var(--warm-gray); padding:6px 0; border-bottom:1px solid rgba(13,31,53,.06); display:flex; align-items:center; gap:10px; }
   .big-step-detail li::before { content:'→'; color:var(--mid); font-size:11px; }
 
-  .files-section { padding:100px 8vw; background:var(--mid-dark); }
+  .files-section { padding:100px 8vw; background:color-mix(in srgb, var(--mid-dark) var(--section-opacity), transparent); }
   .files-section .section-label { color:var(--silver); }
   .files-section .section-label::before { background:var(--silver); }
   .files-section .section-title { color:#F5EFE0; }
@@ -58,7 +58,7 @@
   .files-list li { font-size:14px; font-weight:300; color:rgba(232,237,242,.75); padding:10px 0; border-bottom:1px solid rgba(184,196,207,.07); display:flex; align-items:center; gap:12px; }
   .files-list li::before { content:''; width:8px; height:8px; background:var(--silver); flex-shrink:0; opacity:.5; }
 
-  .turnaround-section { padding:80px 8vw; background:var(--silver-light); }
+  .turnaround-section { padding:80px 8vw; background:color-mix(in srgb, var(--silver-light) var(--section-opacity), transparent); }
   .turnaround-section .section-title em { color:var(--mid); }
   .turnaround-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:48px; }
   .ta-card { background:#fff; padding:48px 36px; text-align:center; border-bottom:3px solid var(--mid); }
@@ -67,7 +67,7 @@
   .ta-desc { font-size:13px; font-weight:300; color:var(--warm-gray); line-height:1.75; }
   .ta-price { font-size:12px; font-weight:500; color:var(--mid); margin-top:16px; letter-spacing:.08em; }
 
-  .faq-section { padding:100px 8vw; background:var(--mid); }
+  .faq-section { padding:100px 8vw; background:color-mix(in srgb, var(--mid) var(--section-opacity), transparent); }
   .faq-section .section-label { color:var(--silver); }
   .faq-section .section-label::before { background:var(--silver); }
   .faq-section .section-title { color:#F5EFE0; }
@@ -80,7 +80,7 @@
   .faq-a-p { display:none; padding:0 0 20px; font-size:14px; font-weight:300; color:rgba(232,237,242,.6); line-height:1.85; }
   .faq-item-p.open .faq-a-p { display:block; }
 
-  .process-cta { background:var(--silver); padding:80px 8vw; text-align:center; }
+  .process-cta { background:color-mix(in srgb, var(--silver) var(--section-opacity), transparent); padding:80px 8vw; text-align:center; }
   .process-cta h2 { font-family:var(--font-display); font-size:clamp(32px,4vw,52px); font-weight:300; color:var(--mid-dark); margin-bottom:16px; }
   .process-cta h2 em { font-style:italic; color:var(--mid); }
   .process-cta p { font-size:15px; font-weight:300; color:rgba(13,31,53,.65); max-width:500px; margin:0 auto 40px; line-height:1.8; }
@@ -108,6 +108,10 @@
 </style>
 </head>
 <body>
+
+<video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/video/background-poster.webp" aria-hidden="true">
+  <source src="assets/video/background.mp4" type="video/mp4">
+</video>
 <div class="page-loader" id="pageLoader"><div class="loader-logo">Kreative <span>Additions</span></div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div>
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 <div class="toast" id="toast"></div>
