@@ -8,7 +8,9 @@ name: PR Validation
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    # `edited` is included so a base-branch change re-validates the new
+    # commit range; title/body-only edits are skipped below.
+    types: [opened, synchronize, reopened, ready_for_review, edited]
   push:
     branches: [main, master]
   merge_group:
@@ -17,13 +19,16 @@ on:
 permissions:
   contents: read
 
+# PR runs supersede earlier runs of the same PR. Push / merge-queue runs and
+# title-only PR edits get a unique group so they never cancel a validation.
 concurrency:
-  group: pr-validation-${{ github.event.pull_request.number || github.ref }}
+  group: pr-validation-${{ (github.event_name == 'pull_request' && (github.event.action != 'edited' || github.event.changes.base)) && format('pr-{0}', github.event.pull_request.number) || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   validate:
     name: PR Validation
+    if: github.event.action != 'edited' || github.event.changes.base
     uses: ematobi1/ematobi1/.github/workflows/ci-reusable.yml@v1
     with:
       strict: false
