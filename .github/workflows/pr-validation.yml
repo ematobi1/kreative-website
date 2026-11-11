@@ -1,0 +1,31 @@
+# Managed by ematobi1/ematobi1 — .github/ci/pr-validation.yml
+# Runs the shared Ubuntu CI pipeline on every pull request and on every push
+# to the default branch. The "PR Validation / CI Gate" check must pass before
+# anything can merge into main.
+#
+# Pipeline source: https://github.com/ematobi1/ematobi1/blob/main/.github/workflows/ci-reusable.yml
+name: PR Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main, master]
+  merge_group:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    name: PR Validation
+    uses: ematobi1/ematobi1/.github/workflows/ci-reusable.yml@v1
+    with:
+      strict: false
+      # skip-paths: |
+      #   path/to/exclude
